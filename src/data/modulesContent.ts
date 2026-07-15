@@ -16,14 +16,6 @@ export const projects: Project[] = [
     imageAlt: 'Shutdown',
   },
   {
-    id: 'boundead',
-    title: 'BOUNDEAD',
-    description:
-      '2.5D adventure/platform videogame in Unity featuring combat, experience systems, and multiple enemy types.',
-    imageUrl: 'images/carousel-boundead/1.png',
-    imageAlt: 'Boundead',
-  },
-  {
     id: 'returnal-unreal-engine',
     title: 'RETURNAL UE5',
     description:
@@ -32,12 +24,36 @@ export const projects: Project[] = [
     imageAlt: 'Returnal UE5',
   },
   {
+    id: 'boundead',
+    title: 'BOUNDEAD',
+    description:
+      '2.5D adventure/platform videogame in Unity featuring combat, experience systems, and multiple enemy types.',
+    imageUrl: 'images/carousel-boundead/1.png',
+    imageAlt: 'Boundead',
+  },
+  {
+    id: 'bullet-heaven',
+    title: 'BULLET HEAVEN',
+    description:
+      'Action top-down shooter with intense bullet heaven gameplay, custom rewards, and abilities.',
+    imageUrl: 'videos/cards/bullet-heaven-trimmed.mp4',
+    imageAlt: 'Bullet Heaven Devlog',
+  },
+  {
     id: 'tesseract',
     title: 'TESSERACT',
     description:
       'Advanced C++ video game engine featuring 2D components, MSAA, and a complete Navigation Module.',
     imageUrl: 'images/engines/TesseractEngine/tesseract.png',
     imageAlt: 'Tesseract',
+  },
+  {
+    id: 'other-unreal-engine-projects',
+    title: 'OTHER UE5 PROJECTS',
+    description:
+      'Various Unreal Engine 5 projects including shooters, physics puzzles, and parkour mechanics.',
+    imageUrl: 'videos/cards/simple-shooter-trimmed.mp4',
+    imageAlt: 'Other Unreal Engine Projects',
   },
   {
     id: 'unreal-engine-materials',
@@ -62,22 +78,6 @@ export const projects: Project[] = [
       'A series of motion graphics and infinite loops rendered in Blender.',
     imageUrl: 'videos/InfiniteLoops/ILRetro.mp4',
     imageAlt: 'Motion Graphics',
-  },
-  {
-    id: 'bullet-heaven',
-    title: 'BULLET HEAVEN',
-    description:
-      'Action top-down shooter with intense bullet heaven gameplay, custom rewards, and abilities.',
-    imageUrl: 'videos/cards/bullet-heaven-trimmed.mp4',
-    imageAlt: 'Bullet Heaven Devlog',
-  },
-  {
-    id: 'other-unreal-engine-projects',
-    title: 'OTHER UE5 PROJECTS',
-    description:
-      'Various Unreal Engine 5 projects including shooters, physics puzzles, and parkour mechanics.',
-    imageUrl: 'videos/cards/simple-shooter-trimmed.mp4',
-    imageAlt: 'Other Unreal Engine Projects',
   },
 ]
 
