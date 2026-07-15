@@ -137,7 +137,7 @@ export function ProjectPage() {
                 }
               >
                 {project.media.map((media, idx) => (
-                  <div key={idx} className="aspect-video w-full border border-primary-container/30 bg-surface-container p-1">
+                  <div key={idx} className={project.id === 'unreal-engine-materials' || project.id === 'motion-graphics' ? 'aspect-square w-full border border-primary-container/30 bg-surface-container p-1' : 'aspect-video w-full border border-primary-container/30 bg-surface-container p-1'}>
                     {media.type === 'video' ? (
                       media.url.includes('youtube.com') ? (
                         <iframe
@@ -154,7 +154,6 @@ export function ProjectPage() {
                           loop
                           muted
                           playsInline
-                          controls
                           className="h-full w-full object-cover"
                           src={media.url.startsWith('http') ? media.url : import.meta.env.BASE_URL + media.url}
                         />
