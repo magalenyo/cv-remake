@@ -1,5 +1,42 @@
 @import "tailwindcss";
 
+:root {
+  /* Default Theme: Amber */
+  --theme-primary: #ff8f00;
+  --theme-primary-light: #ffe082;
+  --theme-bg: #000000;
+}
+
+.theme-scarlet {
+  --theme-primary: #d32f2f;
+  --theme-primary-light: #ffcdd2;
+}
+
+.theme-crimson {
+  --theme-primary: #8b0000;
+  --theme-primary-light: #ff907f;
+}
+
+.theme-emerald {
+  --theme-primary: #00e676;
+  --theme-primary-light: #b9f6ca;
+}
+
+.theme-cyan {
+  --theme-primary: #00e5ff;
+  --theme-primary-light: #84ffff;
+}
+
+.theme-cobalt {
+  --theme-primary: #2962ff;
+  --theme-primary-light: #82b1ff;
+}
+
+.theme-amethyst {
+  --theme-primary: #aa00ff;
+  --theme-primary-light: #e040fb;
+}
+
 @theme {
   --font-headline-lg: "JetBrains Mono", ui-monospace, monospace;
   --font-headline-lg-mobile: "JetBrains Mono", ui-monospace, monospace;
@@ -48,11 +85,11 @@
   --radius-lg: 0px;
   --radius-xl: 0px;
 
-  --color-on-primary-container: #ff907f;
+  --color-on-primary-container: var(--theme-primary-light);
   --color-on-surface-variant: #e3beb8;
   --color-outline: #aa8984;
   --color-secondary: #c6c6c7;
-  --color-primary-container: #8b0000;
+  --color-primary-container: var(--theme-primary);
   --color-surface-container: #2b1c19;
   --color-surface: #1d100e;
   --color-secondary-container: #454747;
@@ -72,9 +109,9 @@
 
 body {
   margin: 0;
-  background-color: #000000;
+  background-color: var(--theme-bg);
   cursor: crosshair;
-  color: #8b0000;
+  color: var(--theme-primary);
   overflow-anchor: none;
 }
 
@@ -140,7 +177,7 @@ body {
   display: inline-block;
   width: 0.6em;
   height: 1em;
-  background-color: #8b0000;
+  background-color: var(--theme-primary);
   animation: blink 0.8s infinite steps(2);
   vertical-align: middle;
   margin-left: 4px;
@@ -228,12 +265,12 @@ body {
 }
 
 .navigation-block {
-  border: 1px solid #8b0000;
+  border: 1px solid var(--theme-primary);
   padding: 12px 24px;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   text-transform: uppercase;
-  background: rgba(139, 0, 0, 0.05);
+  background: color-mix(in srgb, var(--theme-primary) 5%, transparent);
 }
 
 @media (max-width: 639px) {
@@ -243,14 +280,14 @@ body {
 }
 
 .navigation-block:hover {
-  background-color: #8b0000;
-  color: #000000;
-  box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+  background-color: var(--theme-primary);
+  color: var(--theme-bg);
+  box-shadow: 0 0 15px color-mix(in srgb, var(--theme-primary) 50%, transparent);
 }
 
 .navigation-block.active {
-  background-color: #8b0000;
-  color: #000000;
+  background-color: var(--theme-primary);
+  color: var(--theme-bg);
 }
 
 .module-content {
@@ -277,7 +314,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8b0000;
+  background: var(--theme-primary);
 }
 
 .scrollbar-hide::-webkit-scrollbar {
