@@ -83,7 +83,7 @@ export const uplinkChannels: UplinkChannel[] = [
   },
   {
     label: 'LINKEDIN',
-    href: 'https://www.linkedin.com/in/magalenyo',
+    href: 'https://www.linkedin.com/in/miguel-angel-bueno-rivera/',
     icon: 'hub',
     trailingIcon: 'open_in_new',
   },
