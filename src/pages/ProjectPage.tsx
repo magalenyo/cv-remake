@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { projectsData } from '../data/projectsData'
 import { SiteHeader } from '../components/layout/SiteHeader'
@@ -7,10 +7,26 @@ import { SiteFooter } from '../components/layout/SiteFooter'
 export function ProjectPage() {
   const { id } = useParams<{ id: string }>()
   const project = id ? projectsData[id] : null
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadingText, setLoadingText] = useState('ESTABLISHING CONNECTION...')
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
+    
+    // Quick thematic loading sequence
+    setIsLoading(true)
+    setLoadingText('ESTABLISHING CONNECTION...')
+    
+    const t1 = setTimeout(() => setLoadingText('DECRYPTING DATASET...'), 150)
+    const t2 = setTimeout(() => setLoadingText('MOUNTING ASSETS...'), 300)
+    const t3 = setTimeout(() => setIsLoading(false), 450)
+    
+    return () => {
+      clearTimeout(t1)
+      clearTimeout(t2)
+      clearTimeout(t3)
+    }
+  }, [id])
 
   if (!project) {
     return (
@@ -36,8 +52,14 @@ export function ProjectPage() {
       <SiteHeader visible={true} onToggleModule={() => {}} />
 
       <main className="relative z-20 flex min-h-screen flex-col items-center px-4 py-24 md:px-8 md:py-32 lg:px-12">
-        <div className="w-full max-w-6xl space-y-12">
-          {/* Header */}
+        {isLoading ? (
+          <div className="flex h-[50vh] w-full flex-col items-center justify-center space-y-4 font-code text-primary-container">
+            <div className="h-8 w-8 animate-spin border-2 border-primary-container border-t-transparent" />
+            <div className="animate-pulse text-sm tracking-widest opacity-80">[{loadingText}]</div>
+          </div>
+        ) : (
+          <div className="w-full max-w-6xl animate-fade-in space-y-12">
+            {/* Header */}
           <div className="space-y-4 border-b-2 border-primary-container pb-8">
             <Link
               to="/"
@@ -171,6 +193,7 @@ export function ProjectPage() {
             </section>
           )}
         </div>
+        )}
       </main>
 
       <SiteFooter visible={true} />
