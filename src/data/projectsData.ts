@@ -188,6 +188,91 @@ export const projectsData: Record<string, ProjectDetails> = {
       { type: 'image', url: 'images/projects/returnal/bt_ixion_phase_2_2.png' }
     ]
   },
+  'bullet-heaven': {
+    id: 'bullet-heaven',
+    title: 'BULLET HEAVEN DEVLOG',
+    subtitle: 'UNREAL ENGINE 5 / C++',
+    description: 'Action top down shooter in which the player will experience an intense bullet heaven gameplay.',
+    techStack: ['Unreal Engine 5', 'C++'],
+    links: [
+      { label: 'Devlog Youtube Playlist', url: 'https://youtube.com/playlist?list=PLsPJr2L5jJ4I-f4oYgZDGTLnvKujeZJmC&si=Homx5cKNUhm0V4TX' }
+    ],
+    sections: [
+      {
+        title: 'DESCRIPTION',
+        content: [
+          'This project is an action top down shooter in which the player will experience an intense bullet heaven gameplay.',
+          'Battle zombies and earn experience for each kill. The player will choose their rewards and tailor their abilities, making every run unique and strategic.',
+          'Future updates will introduce new characters with unique abilities and upgrades. Expect diverse enemies and maps for varied, strategic gameplay.'
+        ]
+      },
+      {
+        title: 'LATEST DEVLOG',
+        content: ['Auto targetting and Hit Flash Effect']
+      }
+    ],
+    media: [
+      { type: 'video', url: 'https://www.youtube.com/embed/zbsXZeZ82Rk?si=uMr7RoKPEwlAW1W1' }
+    ]
+  },
+  'other-unreal-engine-projects': {
+    id: 'other-unreal-engine-projects',
+    title: 'OTHER UNREAL ENGINE PROJECTS',
+    subtitle: 'UNREAL ENGINE 5 / C++ / BLUEPRINTS',
+    description: 'Here are some small projects to learn Unreal Engine 5 with C++ and Blueprints.',
+    techStack: ['Unreal Engine 5', 'C++', 'Blueprints'],
+    links: [
+      { label: 'Simple Shooter Github', url: 'https://github.com/magalenyo/UE5-SimpleShooter' },
+      { label: 'Toon Tanks Github', url: 'https://github.com/magalenyo/UE5-ToonTanks' },
+      { label: 'Crypt Raider Github', url: 'https://github.com/magalenyo/UE5-CryptRaider' },
+      { label: 'Warehouse Wreckage Github', url: 'https://github.com/magalenyo/WarehouseWreckage' },
+      { label: 'Obstacle Assault Github', url: 'https://github.com/magalenyo/ObstacleAssault' }
+    ],
+    sections: [
+      {
+        title: 'DESCRIPTION',
+        content: [
+          'Here are some small projects to learn Unreal Engine 5 with C++ and Blueprints.',
+          'Visual assets like models, textures, animations, etc. are free to use assets from the Unreal Engine Asset Store or online sites.'
+        ]
+      },
+      {
+        title: 'SIMPLE THIRD PERSON SHOOTER',
+        content: [
+          'Made entirely with C++.',
+          'AI is controlled with Behavior Trees and custom tasks. AI will follow and engage into combat when it detects the player. If it loses sight of the player, it will move to the player\'s last known position. Upon reaching player\'s last known position and after a brief time, it returns to its original position.'
+        ]
+      },
+      {
+        title: 'TOON TANKS',
+        content: ['Tank shooter project using C++.']
+      },
+      {
+        title: 'CRYPT RAIDER',
+        content: ['Project to play with physics interactions in C++.']
+      },
+      {
+        title: 'WAREHOUSE WRECKAGE',
+        content: ['Project to play around with Physics and basic spawning.']
+      },
+      {
+        title: 'OBSTACLE ASSAULT',
+        content: ['Project to play around with blueprints and C++.']
+      },
+      {
+        title: 'OLD PARKOUR / TELEKINESIS',
+        content: ['Project to play with Parkour and Telekinesis mechanics and dynamics.']
+      }
+    ],
+    media: [
+      { type: 'video', url: 'https://www.youtube.com/embed/sLYlTkkzyTo' },
+      { type: 'video', url: 'https://www.youtube.com/embed/qrq0f1ArVJg' },
+      { type: 'video', url: 'https://www.youtube.com/embed/Fydhxdn3Xjg' },
+      { type: 'video', url: 'https://www.youtube.com/embed/sc2W2DIb_rI' },
+      { type: 'video', url: 'https://www.youtube.com/embed/RbP3j0Z2A5E' },
+      { type: 'video', url: 'https://www.youtube.com/embed/yCSJiva1s88' }
+    ]
+  },
   'unreal-engine-materials': {
     id: 'unreal-engine-materials',
     title: 'UE5 MATERIALS',

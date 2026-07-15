@@ -8,7 +8,7 @@ export function ProjectsModule() {
         DATASET: ACTIVE_DEVELOPMENT
       </h2>
 
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <Link
             key={project.id}
@@ -22,13 +22,13 @@ export function ProjectsModule() {
                   loop
                   muted
                   playsInline
-                  className="h-full w-full object-cover opacity-70 transition-all duration-500 group-hover:opacity-100 group-focus:opacity-100"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 group-focus:scale-105"
                   src={project.imageUrl.startsWith('http') ? project.imageUrl : import.meta.env.BASE_URL + project.imageUrl}
                 />
               ) : (
                 <img
                   alt={project.imageAlt}
-                  className="h-full w-full object-cover opacity-70 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-focus:opacity-100 group-focus:grayscale-0"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 group-focus:scale-105"
                   loading="lazy"
                   src={project.imageUrl.startsWith('http') ? project.imageUrl : import.meta.env.BASE_URL + project.imageUrl}
                 />
