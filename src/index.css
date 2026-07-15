@@ -1,3 +1,71 @@
-body {
-  margin: 0;
+@import "tailwindcss";
+
+@theme {
+  --font-headline-lg: "JetBrains Mono", ui-monospace, monospace;
+  --font-headline-lg-mobile: "JetBrains Mono", ui-monospace, monospace;
+  --font-headline-md: "JetBrains Mono", ui-monospace, monospace;
+  --font-body-lg: "JetBrains Mono", ui-monospace, monospace;
+  --font-body-sm: "JetBrains Mono", ui-monospace, monospace;
+  --font-label-caps: "JetBrains Mono", ui-monospace, monospace;
+  --font-code: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-headline-lg: 40px;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--letter-spacing: -0.04em;
+  --text-headline-lg--font-weight: 700;
+
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 1.2;
+  --text-headline-lg-mobile--font-weight: 700;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 1.4;
+  --text-headline-md--font-weight: 600;
+
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.6;
+  --text-body-sm--font-weight: 400;
+
+  --text-label-caps: 12px;
+  --text-label-caps--line-height: 1;
+  --text-label-caps--letter-spacing: 0.1em;
+  --text-label-caps--font-weight: 700;
+
+  --text-code: 14px;
+  --text-code--line-height: 1.5;
+  --text-code--font-weight: 400;
+
+  --spacing-gutter: 16px;
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 32px;
+  --spacing-unit: 4px;
+
+  --radius-default: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+
+  --color-on-primary-container: #ff907f;
+  --color-on-surface-variant: #e3beb8;
+  --color-outline: #aa8984;
+  --color-secondary: #c6c6c7;
+  --color-primary-container: #8b0000;
+  --color-surface-container: #2b1c19;
+  --color-surface: #1d100e;
+  --color-secondary-container: #454747;
+  --color-on-primary: #690000;
+  --color-primary: #ffb4a8;
+  --color-on-surface: #f8dcd8;
+  --color-tertiary: #bcc3ff;
+  --color-background: #1d100e;
+  --color-on-background: #f8dcd8;
+  --color-surface-variant: #42312e;
+  --color-surface-bright: #473532;
+  --color-surface-container-high: #362623;
+  --color-surface-container-highest: #42312e;
+  --color-surface-container-low: #261816;
+  --color-surface-container-lowest: #180b09;
 }
