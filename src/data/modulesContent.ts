@@ -79,6 +79,7 @@ export type UplinkChannel = {
   icon: string
   trailingIcon: string
   multiline?: boolean
+  download?: boolean
 }
 
 export const uplinkChannels: UplinkChannel[] = [
@@ -96,9 +97,16 @@ export const uplinkChannels: UplinkChannel[] = [
   },
   {
     label: 'FETCH CREDENTIALS',
-    href: 'https://miguelangelbuenorivera.com/',
+    href: 'CV_MiguelAngelBuenoRivera.pdf',
     icon: 'download',
     trailingIcon: 'description',
     multiline: true,
+    download: true,
+  },
+  {
+    label: 'SEND EMAIL',
+    href: 'mailto:magalenyo7@gmail.com',
+    icon: 'mail',
+    trailingIcon: 'send',
   },
 ]
