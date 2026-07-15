@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { projectsData } from '../data/projectsData'
 import { SiteHeader } from '../components/layout/SiteHeader'
@@ -6,6 +7,10 @@ import { SiteFooter } from '../components/layout/SiteFooter'
 export function ProjectPage() {
   const { id } = useParams<{ id: string }>()
   const project = id ? projectsData[id] : null
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   if (!project) {
     return (
