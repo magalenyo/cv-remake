@@ -13,6 +13,8 @@ export function IdentityHeader({
   subtitle,
   showNameCursor,
 }: IdentityHeaderProps) {
+  if (!visible) return null
+
   return (
     <div
       className={`mb-8 space-y-4 text-center transition-all duration-1000 ease-in-out md:mb-12 ${

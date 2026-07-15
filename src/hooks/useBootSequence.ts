@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react'
 import { bootSequence, identityData } from '../data/siteContent'
 
-export type BootPhase =
-  | 'idle'
-  | 'identity'
-  | 'boot'
-  | 'welcome'
-  | 'complete'
+export type BootPhase = 'identity' | 'boot' | 'welcome' | 'complete'
 
 async function typeInto(
   text: string,
@@ -27,13 +22,13 @@ export function useBootSequence(autoStart = true) {
   // Check if we've already booted in this session
   const hasBooted = sessionStorage.getItem('muthur_booted') === 'true'
 
-  const [phase, setPhase] = useState<BootPhase>(hasBooted ? 'complete' : 'idle')
+  const [phase, setPhase] = useState<BootPhase>(hasBooted ? 'complete' : 'identity')
   const [name, setName] = useState(hasBooted ? identityData.name : '')
   const [subtitle, setSubtitle] = useState(hasBooted ? identityData.subtitle : '')
   const [bootLines, setBootLines] = useState<string[]>([])
-  const [bootVisible, setBootVisible] = useState(!hasBooted)
+  const [bootVisible, setBootVisible] = useState(false)
   const [welcomeVisible, setWelcomeVisible] = useState(false)
-  const [showNameCursor, setShowNameCursor] = useState(!hasBooted)
+  const [showNameCursor, setShowNameCursor] = useState(hasBooted)
 
   useEffect(() => {
     if (!autoStart || hasBooted) {
@@ -60,6 +55,7 @@ export function useBootSequence(autoStart = true) {
 
       await new Promise((resolve) => window.setTimeout(resolve, 400))
       setPhase('boot')
+      setBootVisible(true)
 
       for (const line of bootSequence) {
         if (cancelled) {
@@ -109,7 +105,7 @@ export function useBootSequence(autoStart = true) {
 
     const timer = window.setTimeout(() => {
       void run()
-    }, 500)
+    }, 0)
 
     return () => {
       cancelled = true
@@ -126,7 +122,7 @@ export function useBootSequence(autoStart = true) {
     welcomeVisible,
     showNameCursor,
     isComplete: phase === 'complete',
-    showIdentity: phase !== 'idle',
+    showIdentity: phase === 'identity' || phase === 'boot' || phase === 'welcome' || phase === 'complete',
     identityReveal: phase === 'complete',
     showInterface: phase === 'complete',
     showChrome: phase === 'complete',
