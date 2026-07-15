@@ -47,6 +47,14 @@ export const projects: Project[] = [
     imageUrl: 'images/projects/returnal/bt_ixion_general.png',
     imageAlt: 'Returnal UE5',
   },
+  {
+    id: 'unreal-engine-materials',
+    title: 'UE5 MATERIALS',
+    description:
+      'A collection of Unreal Engine 5 materials and shaders exploring various rendering techniques.',
+    imageUrl: 'images/ue-materials/magic/cardview.mp4',
+    imageAlt: 'Unreal Engine 5 Materials',
+  },
 ]
 
 export type UplinkChannel = {

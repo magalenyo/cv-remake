@@ -16,12 +16,23 @@ export function ProjectsModule() {
             className="group space-y-4 outline-none"
           >
             <div className="aspect-video overflow-hidden border border-primary-container/30 bg-surface-container transition-colors group-hover:border-primary-container group-focus:border-primary-container">
-              <img
-                alt={project.imageAlt}
-                className="h-full w-full object-cover opacity-70 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-focus:opacity-100 group-focus:grayscale-0"
-                loading="lazy"
-                src={project.imageUrl.startsWith('http') ? project.imageUrl : import.meta.env.BASE_URL + project.imageUrl}
-              />
+              {project.imageUrl.endsWith('.mp4') ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full object-cover opacity-70 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-focus:opacity-100 group-focus:grayscale-0"
+                  src={project.imageUrl.startsWith('http') ? project.imageUrl : import.meta.env.BASE_URL + project.imageUrl}
+                />
+              ) : (
+                <img
+                  alt={project.imageAlt}
+                  className="h-full w-full object-cover opacity-70 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-focus:opacity-100 group-focus:grayscale-0"
+                  loading="lazy"
+                  src={project.imageUrl.startsWith('http') ? project.imageUrl : import.meta.env.BASE_URL + project.imageUrl}
+                />
+              )}
             </div>
             <div>
               <h3 className="font-bold uppercase tracking-widest transition-colors group-hover:text-white group-focus:text-white">

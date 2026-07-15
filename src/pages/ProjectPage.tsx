@@ -107,14 +107,26 @@ export function ProjectPage() {
                 {project.media.map((media, idx) => (
                   <div key={idx} className="aspect-video w-full border border-primary-container/30 bg-surface-container p-1">
                     {media.type === 'video' ? (
-                      <iframe
-                        className="h-full w-full"
-                        src={media.url}
-                        title="Video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                      media.url.includes('youtube.com') ? (
+                        <iframe
+                          className="h-full w-full"
+                          src={media.url}
+                          title="Video player"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      ) : (
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          controls
+                          className="h-full w-full object-cover"
+                          src={media.url.startsWith('http') ? media.url : import.meta.env.BASE_URL + media.url}
+                        />
+                      )
                     ) : (
                       <img
                         src={media.url.startsWith('http') ? media.url : import.meta.env.BASE_URL + media.url}

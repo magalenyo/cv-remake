@@ -186,5 +186,49 @@ export const projectsData: Record<string, ProjectDetails> = {
       { type: 'image', url: 'images/projects/returnal/bt_ixion_phase_2_1.png' },
       { type: 'image', url: 'images/projects/returnal/bt_ixion_phase_2_2.png' }
     ]
+  },
+  'unreal-engine-materials': {
+    id: 'unreal-engine-materials',
+    title: 'UE5 MATERIALS',
+    subtitle: 'UNREAL ENGINE 5 SHADERS & MATERIALS',
+    heroImage: 'images/ue-materials/magic/cardview.mp4',
+    sections: [
+      {
+        title: 'DESCRIPTION',
+        content: [
+          'This is an Unreal Engine 5 project to learn more about materials and experiment with rendering techniques. You can find all the materials in the same Github repository.'
+        ]
+      },
+      {
+        title: 'MATERIALS_COLLECTION',
+        content: ['The collection includes:'],
+        list: [
+          { label: 'Dragon', description: 'Animated dragon material.' },
+          { label: 'Morphing', description: 'Geometry morphing effect.' },
+          { label: 'Volumetric Ice', description: 'Deep volumetric ice shader.' },
+          { label: 'Glitter Ball', description: 'Sparkling glitter material.' },
+          { label: 'Magic Sphere', description: 'Magical energy sphere effect.' },
+          { label: 'Slime', description: 'Viscous slime material.' },
+          { label: 'Glass', description: 'Refractive glass shader.' },
+          { label: 'Bubble', description: 'Iridescent soap bubble effect.' },
+          { label: 'Sun', description: 'Solar surface material.' },
+          { label: 'TV Screen', description: 'CRT/LCD screen effect.' }
+        ]
+      }
+    ],
+    links: [
+      { label: 'UE5 SHADERS REPO', url: 'https://github.com/magalenyo/ShadersUE5' }
+    ],
+    media: [
+      { type: 'video', url: 'images/ue-materials/dragon/video.mp4' },
+      { type: 'video', url: 'images/ue-materials/volumetric-ice/video.mp4' },
+      { type: 'video', url: 'images/ue-materials/glitter/video.mp4' },
+      { type: 'video', url: 'images/ue-materials/magic/video.mp4' },
+      { type: 'video', url: 'images/ue-materials/slime/video.mp4' },
+      { type: 'video', url: 'images/ue-materials/glass/video.mp4' },
+      { type: 'video', url: 'images/ue-materials/bubble/video.mp4' },
+      { type: 'video', url: 'images/ue-materials/sun/video.mp4' },
+      { type: 'video', url: 'images/ue-materials/screen/video.mp4' }
+    ]
   }
 }
