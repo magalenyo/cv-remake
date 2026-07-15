@@ -16,12 +16,52 @@ export const projects: Project[] = [
     imageAlt: 'Shutdown',
   },
   {
+    id: 'boundead',
+    title: 'BOUNDEAD',
+    description:
+      '2.5D adventure/platform videogame in Unity featuring combat, experience systems, and multiple enemy types.',
+    imageUrl: 'images/carousel-boundead/1.png',
+    imageAlt: 'Boundead',
+  },
+  {
     id: 'returnal-unreal-engine',
     title: 'RETURNAL UE5',
     description:
       'Recreation of Housemarque\'s Returnal bosses in Unreal Engine 5 using C++ and Behavior Trees.',
     imageUrl: 'videos/cards/returnal-ue-trimmed.mp4',
     imageAlt: 'Returnal UE5',
+  },
+  {
+    id: 'tesseract',
+    title: 'TESSERACT',
+    description:
+      'Advanced C++ video game engine featuring 2D components, MSAA, and a complete Navigation Module.',
+    imageUrl: 'images/engines/TesseractEngine/tesseract.png',
+    imageAlt: 'Tesseract',
+  },
+  {
+    id: 'unreal-engine-materials',
+    title: 'UE5 MATERIALS',
+    description:
+      'A collection of Unreal Engine 5 materials and shaders exploring various rendering techniques.',
+    imageUrl: 'images/ue-materials/magic/cardview.mp4',
+    imageAlt: 'Unreal Engine 5 Materials',
+  },
+  {
+    id: 'real-disunity',
+    title: 'REAL DISUNITY',
+    description:
+      'Custom C++ and OpenGL video game engines developed from scratch, featuring 3D rendering and scene management.',
+    imageUrl: 'images/engines/RealDisunityEngine/RealDisunity1.png',
+    imageAlt: 'Real Disunity',
+  },
+  {
+    id: 'motion-graphics',
+    title: 'MOTION GRAPHICS',
+    description:
+      'A series of motion graphics and infinite loops rendered in Blender.',
+    imageUrl: 'videos/InfiniteLoops/ILRetro.mp4',
+    imageAlt: 'Motion Graphics',
   },
   {
     id: 'bullet-heaven',
@@ -38,46 +78,6 @@ export const projects: Project[] = [
       'Various Unreal Engine 5 projects including shooters, physics puzzles, and parkour mechanics.',
     imageUrl: 'videos/cards/simple-shooter-trimmed.mp4',
     imageAlt: 'Other Unreal Engine Projects',
-  },
-  {
-    id: 'boundead',
-    title: 'BOUNDEAD',
-    description:
-      '2.5D adventure/platform videogame in Unity featuring combat, experience systems, and multiple enemy types.',
-    imageUrl: 'images/carousel-boundead/1.png',
-    imageAlt: 'Boundead',
-  },
-  {
-    id: 'tesseract',
-    title: 'TESSERACT',
-    description:
-      'Advanced C++ video game engine featuring 2D components, MSAA, and a complete Navigation Module.',
-    imageUrl: 'images/engines/TesseractEngine/tesseract.png',
-    imageAlt: 'Tesseract',
-  },
-  {
-    id: 'real-disunity',
-    title: 'REAL DISUNITY',
-    description:
-      'Custom C++ and OpenGL video game engines developed from scratch, featuring 3D rendering and scene management.',
-    imageUrl: 'images/engines/RealDisunityEngine/RealDisunity1.png',
-    imageAlt: 'Real Disunity',
-  },
-  {
-    id: 'unreal-engine-materials',
-    title: 'UE5 MATERIALS',
-    description:
-      'A collection of Unreal Engine 5 materials and shaders exploring various rendering techniques.',
-    imageUrl: 'images/ue-materials/magic/cardview.mp4',
-    imageAlt: 'Unreal Engine 5 Materials',
-  },
-  {
-    id: 'motion-graphics',
-    title: 'MOTION GRAPHICS',
-    description:
-      'A series of motion graphics and infinite loops rendered in Blender.',
-    imageUrl: 'videos/InfiniteLoops/ILRetro.mp4',
-    imageAlt: 'Motion Graphics',
   },
 ]
 
