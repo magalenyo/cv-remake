@@ -26,12 +26,13 @@ export function ProjectPage() {
     const t2 = setTimeout(() => setLoadingText('MOUNTING ASSETS...'), 300)
     const t3 = setTimeout(() => {
       setIsLoading(false)
-      // Use requestAnimationFrame to ensure the DOM has updated before scrolling
-      window.requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+      // Use a small timeout to let React render the new DOM before scrolling
+      // This is especially important for mobile browsers
+      setTimeout(() => {
+        window.scrollTo(0, 0)
         document.documentElement.scrollTop = 0
         document.body.scrollTop = 0
-      })
+      }, 50)
     }, 450)
     
     return () => {

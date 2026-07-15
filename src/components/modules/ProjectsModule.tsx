@@ -15,7 +15,11 @@ export function ProjectsModule() {
             key={project.id}
             to={`/project/${project.id}`}
             className="group space-y-4 outline-none"
-            onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })}
+            onClick={() => {
+              window.scrollTo(0, 0)
+              document.documentElement.scrollTop = 0
+              document.body.scrollTop = 0
+            }}
           >
             <div className="relative aspect-video overflow-hidden border border-primary-container/30 bg-surface-container transition-colors group-hover:border-primary-container group-focus:border-primary-container">
               {/* Cyber Target Lock Effect */}
