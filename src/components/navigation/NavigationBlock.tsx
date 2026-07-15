@@ -17,17 +17,22 @@ export function NavigationBlock({
   active,
   onToggle,
 }: NavigationBlockProps) {
+  const [labelStart, labelEnd] = splitModuleLabel(label)
+
   return (
     <button
       type="button"
       id={`btn-${id}`}
-      className={`navigation-block group w-full ${active ? 'active' : ''}`}
+      className={`navigation-block group flex h-full w-full min-w-0 ${active ? 'active' : ''}`}
       onClick={() => onToggle(id)}
     >
-      <div className="flex flex-col items-center gap-4 py-4">
-        <span className="material-symbols-outlined text-3xl md:text-4xl">{icon}</span>
-        <span className="text-base font-bold tracking-widest md:text-lg">[{label}]</span>
-        <p className="text-center text-[10px] leading-tight opacity-60">
+      <div className="flex w-full flex-col items-center justify-center gap-2 py-3 sm:gap-4 sm:py-4">
+        <span className="material-symbols-outlined text-2xl sm:text-3xl md:text-4xl">{icon}</span>
+        <span className="w-full px-1 text-center text-[9px] font-bold leading-tight tracking-[0.08em] sm:text-base sm:tracking-widest md:text-lg">
+          <span className="block sm:inline">[{labelStart}</span>
+          <span className="block sm:inline">{labelEnd}]</span>
+        </span>
+        <p className="hidden text-center text-[10px] leading-tight opacity-60 sm:block">
           {descriptionLines[0]}
           <br />
           {descriptionLines[1]}
@@ -35,4 +40,11 @@ export function NavigationBlock({
       </div>
     </button>
   )
+}
+
+function splitModuleLabel(label: string): [string, string] {
+  const splitIndex = label.indexOf('_')
+  if (splitIndex === -1) return [label, '']
+
+  return [label.slice(0, splitIndex + 1), label.slice(splitIndex + 1)]
 }

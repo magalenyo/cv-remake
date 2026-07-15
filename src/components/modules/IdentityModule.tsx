@@ -34,6 +34,7 @@ export function IdentityModule() {
         <div className="w-full flex-1 space-y-6">
           <h2 className="border-b border-primary-container pb-2 text-xl font-bold uppercase tracking-[0.2em] md:text-2xl md:tracking-[0.3em]">
             BIOMETRIC_PROFILE: 2122-A
+            <span aria-hidden="true" className="cursor-blink" />
           </h2>
 
           <div className="space-y-4">

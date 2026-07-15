@@ -49,6 +49,7 @@ export function UplinkModule() {
     <>
       <h2 className="mb-8 border-b border-primary-container pb-2 text-xl font-bold uppercase tracking-[0.2em] md:text-2xl md:tracking-[0.3em]">
         COMMUNICATION_CHANNELS
+        <span aria-hidden="true" className="cursor-blink" />
       </h2>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">

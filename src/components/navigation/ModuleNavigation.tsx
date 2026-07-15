@@ -34,7 +34,7 @@ type ModuleNavigationProps = {
 
 export function ModuleNavigation({ activeModule, onToggleModule }: ModuleNavigationProps) {
   return (
-    <div className="mb-12 grid w-full grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+    <div className="mb-12 grid w-full grid-cols-3 items-stretch gap-2 sm:gap-4 md:gap-6">
       {navigationItems.map((item) => (
         <NavigationBlock
           key={item.id}

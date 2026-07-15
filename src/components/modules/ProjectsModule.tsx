@@ -6,6 +6,7 @@ export function ProjectsModule() {
     <>
       <h2 className="mb-8 border-b border-primary-container pb-2 text-xl font-bold uppercase tracking-[0.2em] md:text-2xl md:tracking-[0.3em]">
         DATASET: ACTIVE_DEVELOPMENT
+        <span aria-hidden="true" className="cursor-blink" />
       </h2>
 
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -14,6 +15,7 @@ export function ProjectsModule() {
             key={project.id}
             to={`/project/${project.id}`}
             className="group space-y-4 outline-none"
+            onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })}
           >
             <div className="relative aspect-video overflow-hidden border border-primary-container/30 bg-surface-container transition-colors group-hover:border-primary-container group-focus:border-primary-container">
               {/* Cyber Target Lock Effect */}

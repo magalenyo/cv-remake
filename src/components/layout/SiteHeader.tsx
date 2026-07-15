@@ -1,11 +1,25 @@
+import { useLocation, useNavigate } from 'react-router-dom'
 import type { ModuleId } from '../../types/modules'
 
 type SiteHeaderProps = {
   visible: boolean
-  onToggleModule: (id: ModuleId) => void
+  onToggleModule?: (id: ModuleId) => void
 }
 
 export function SiteHeader({ visible, onToggleModule }: SiteHeaderProps) {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const isHome = location.pathname === '/'
+
+  const handleModuleClick = (id: ModuleId) => {
+    if (isHome) {
+      onToggleModule?.(id)
+      return
+    }
+
+    navigate('/', { state: { openModule: id } })
+  }
+
   return (
     <nav
       className={`fixed top-0 left-0 z-40 flex w-full items-center border-b border-primary-container bg-black/90 px-4 py-4 backdrop-blur-sm transition-opacity duration-1000 md:px-margin-desktop ${
@@ -21,8 +35,8 @@ export function SiteHeader({ visible, onToggleModule }: SiteHeaderProps) {
           <button
             key={id}
             type="button"
-            className="px-2 py-1 font-body-sm uppercase tracking-widest text-primary-container transition-colors hover:bg-primary-container hover:text-black"
-            onClick={() => onToggleModule(id)}
+            className="cursor-pointer px-2 py-1 font-body-sm uppercase tracking-widest text-primary-container transition-colors hover:bg-primary-container hover:text-black"
+            onClick={() => handleModuleClick(id)}
           >
             [{id}]
           </button>
