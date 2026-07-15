@@ -7,29 +7,37 @@ export function IdentityModule() {
           </h2>
 
           <div className="space-y-4">
-            <div className="border-l-4 border-primary-container bg-primary-container/10 p-4">
-              <p className="text-base leading-relaxed md:text-lg">
-                Lead Systems Architect specializing in low-level engine optimization and
-                cyber-physical interface design.
+            <div className="border-l-4 border-primary-container bg-primary-container/10 p-4 space-y-4">
+              <p className="text-sm leading-relaxed md:text-base">
+                Greetings! My name is Miguel, a 29-year-old Computer Engineer specialized in Software Development. My lifelong passion for video games inspired me to earn a Master's Degree in Advanced Programming for AAA Video Games from Universitat Politècnica de Catalunya (UPC).
+              </p>
+              <p className="text-sm leading-relaxed md:text-base">
+                I currently work as a Full Stack Developer at Next Digital, collaborating with Iberia Airlines. With over six years of professional experience, I’ve built a strong background in developing scalable, high-quality, and well-tested web applications using technologies such as Angular, React, Java Spring Boot, NestJS, and Python.
+              </p>
+              <p className="text-sm leading-relaxed md:text-base">
+                My work emphasizes clean architecture, performance, and maintainability across both frontend and backend systems. My relentless curiosity and drive to explore emerging technologies have made me a highly adaptable, detail-oriented, and proactive developer.
+              </p>
+              <p className="text-sm leading-relaxed md:text-base">
+                Beyond my professional pursuits, I’m deeply passionate about video game development, 3D rendering and modeling, app development, and even the culinary arts — always seeking creativity and challenge in everything I do.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 font-label-caps text-xs sm:grid-cols-2 md:text-sm">
+            <div className="grid grid-cols-1 gap-4 font-label-caps text-xs sm:grid-cols-2 md:text-sm pt-4">
               <div className="space-y-1">
                 <span className="opacity-50">LOCATION:</span>
-                <div>SECTOR 4 // NOSTROMO</div>
+                <div>BARCELONA, SPAIN</div>
               </div>
               <div className="space-y-1">
-                <span className="opacity-50">STATUS:</span>
-                <div>AUTHORIZED PERSONNEL</div>
+                <span className="opacity-50">ROLE:</span>
+                <div>FULL STACK DEVELOPER</div>
               </div>
               <div className="space-y-1">
-                <span className="opacity-50">CLEARANCE:</span>
-                <div>LEVEL 7 (CRITICAL)</div>
+                <span className="opacity-50">EXPERIENCE:</span>
+                <div>6+ YEARS</div>
               </div>
               <div className="space-y-1">
-                <span className="opacity-50">UPLINK:</span>
-                <div>SECURE_ENCRYPTED</div>
+                <span className="opacity-50">SPECIALTY:</span>
+                <div>WEB & GAME DEV</div>
               </div>
             </div>
           </div>
