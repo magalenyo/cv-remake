@@ -162,7 +162,7 @@ export function ProjectPage() {
                       <img
                         src={media.url.startsWith('http') ? media.url : import.meta.env.BASE_URL + media.url}
                         alt={media.alt || 'Project media'}
-                        className="h-full w-full object-contain grayscale transition-all duration-500 hover:grayscale-0"
+                        className="h-full w-full object-contain"
                       />
                     )}
                   </div>
