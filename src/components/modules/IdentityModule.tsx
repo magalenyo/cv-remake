@@ -30,13 +30,14 @@ function CollapsibleSection({ title, children }: { title: string; children: Reac
 
 export function IdentityModule() {
   return (
-    <div className="flex flex-col items-start gap-8 md:flex-row">
-        <div className="w-full flex-1 space-y-6">
-          <h2 className="border-b border-primary-container pb-2 text-xl font-bold uppercase tracking-[0.2em] md:text-2xl md:tracking-[0.3em]">
-            BIOMETRIC_PROFILE: 2122-A
-            <span aria-hidden="true" className="cursor-blink" />
-          </h2>
+    <div className="flex flex-col gap-8">
+      <h2 className="border-b border-primary-container pb-2 text-xl font-bold uppercase tracking-[0.2em] md:text-2xl md:tracking-[0.3em]">
+        BIOMETRIC_PROFILE: 2122-A
+        <span aria-hidden="true" className="cursor-blink" />
+      </h2>
 
+      <div className="flex flex-col items-start gap-8 md:flex-row">
+        <div className="w-full flex-1 space-y-6">
           <div className="space-y-4">
             <div className="border-l-4 border-primary-container bg-primary-container/10 p-4 space-y-4">
               <p className="text-sm leading-relaxed md:text-base">
@@ -133,7 +134,7 @@ export function IdentityModule() {
           </div>
         </div>
 
-        <aside className="hidden w-full space-y-4 border border-primary-container/30 bg-black p-4 md:block md:w-64">
+        <aside className="hidden w-full shrink-0 space-y-4 border border-primary-container/30 bg-black p-4 md:block md:w-64 md:self-start">
           <div className="flex aspect-square w-full items-center justify-center overflow-hidden border border-dashed border-primary-container/50 p-1">
             <img
               src="images/profile-picture.jpg"
@@ -147,6 +148,7 @@ export function IdentityModule() {
             <div>DNA MATCH... 99.98%</div>
           </div>
         </aside>
+      </div>
     </div>
   )
 }
