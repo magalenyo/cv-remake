@@ -47,6 +47,7 @@ export function ProjectPage() {
           <p className="mt-4 font-code opacity-80">PROJECT DATA CORRUPTED OR MISSING.</p>
           <Link
             to="/"
+            state={{ openModule: 'ROOT_PROJECTS' }}
             className="mt-8 inline-block border border-primary-container px-6 py-2 font-label-caps uppercase tracking-widest transition-colors hover:bg-primary-container hover:text-black"
           >
             RETURN TO ROOT
@@ -72,6 +73,7 @@ export function ProjectPage() {
           <div className="space-y-4 border-b-2 border-primary-container pb-8">
             <Link
               to="/"
+              state={{ openModule: 'ROOT_PROJECTS' }}
               className="group mb-8 inline-flex items-center gap-2 font-label-caps text-xs uppercase tracking-widest opacity-80 transition-opacity hover:opacity-100"
             >
               <span className="material-symbols-outlined text-lg transition-transform group-hover:-translate-x-1">
