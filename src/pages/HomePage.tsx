@@ -1,3 +1,5 @@
+import { useEffect, type ComponentType } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { BootSequence } from '../components/boot/BootSequence'
 import { IdentityHeader } from '../components/boot/IdentityHeader'
 import { WelcomeMessage } from '../components/boot/WelcomeMessage'
@@ -11,10 +13,29 @@ import { UplinkModule } from '../components/modules/UplinkModule'
 import { ModuleNavigation } from '../components/navigation/ModuleNavigation'
 import { useBootSequence } from '../hooks/useBootSequence'
 import { useModuleToggle } from '../hooks/useModuleToggle'
+import type { ModuleId } from '../types/modules'
+
+const moduleViews: Record<ModuleId, ComponentType> = {
+  ROOT_PROJECTS: ProjectsModule,
+  IDENT_MANIFEST: IdentityModule,
+  CORE_UPLINK: UplinkModule,
+}
 
 export function HomePage() {
+  const location = useLocation()
+  const navigate = useNavigate()
   const boot = useBootSequence()
-  const { activeModule, toggleModule, isExpanded } = useModuleToggle()
+  const { activeModule, toggleModule, openModule } = useModuleToggle()
+
+  useEffect(() => {
+    const module = (location.state as { openModule?: ModuleId } | null)?.openModule
+    if (!module || !boot.showInterface) return
+
+    openModule(module)
+    navigate(location.pathname, { replace: true, state: null })
+  }, [location.state, boot.showInterface, openModule, navigate, location.pathname])
+
+  const ActiveModuleView = activeModule ? moduleViews[activeModule] : null
 
   return (
     <>
@@ -34,8 +55,12 @@ export function HomePage() {
             showNameCursor={boot.showNameCursor}
           />
 
-          <BootSequence lines={boot.bootLines} visible={boot.bootVisible} />
-          <WelcomeMessage visible={boot.welcomeVisible} />
+          {!boot.isComplete && (
+            <>
+              <BootSequence lines={boot.bootLines} visible={boot.bootVisible} />
+              <WelcomeMessage visible={boot.welcomeVisible} />
+            </>
+          )}
         </div>
 
         <div
@@ -45,18 +70,12 @@ export function HomePage() {
         >
           <ModuleNavigation activeModule={activeModule} onToggleModule={toggleModule} />
 
-          <div className="w-full space-y-8">
-            <ModulePanel id="ROOT_PROJECTS" expanded={isExpanded('ROOT_PROJECTS')}>
-              <ProjectsModule />
-            </ModulePanel>
-
-            <ModulePanel id="IDENT_MANIFEST" expanded={isExpanded('IDENT_MANIFEST')}>
-              <IdentityModule />
-            </ModulePanel>
-
-            <ModulePanel id="CORE_UPLINK" expanded={isExpanded('CORE_UPLINK')}>
-              <UplinkModule />
-            </ModulePanel>
+          <div className="w-full">
+            {activeModule && ActiveModuleView ? (
+              <ModulePanel id={activeModule}>
+                <ActiveModuleView />
+              </ModulePanel>
+            ) : null}
           </div>
 
           <DiagnosticFeed />
