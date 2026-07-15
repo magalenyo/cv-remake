@@ -24,16 +24,19 @@ async function typeInto(
 }
 
 export function useBootSequence(autoStart = true) {
-  const [phase, setPhase] = useState<BootPhase>('idle')
-  const [name, setName] = useState('')
-  const [subtitle, setSubtitle] = useState('')
+  // Check if we've already booted in this session
+  const hasBooted = sessionStorage.getItem('muthur_booted') === 'true'
+
+  const [phase, setPhase] = useState<BootPhase>(hasBooted ? 'complete' : 'idle')
+  const [name, setName] = useState(hasBooted ? identityData.name : '')
+  const [subtitle, setSubtitle] = useState(hasBooted ? identityData.subtitle : '')
   const [bootLines, setBootLines] = useState<string[]>([])
-  const [bootVisible, setBootVisible] = useState(true)
+  const [bootVisible, setBootVisible] = useState(!hasBooted)
   const [welcomeVisible, setWelcomeVisible] = useState(false)
-  const [showNameCursor, setShowNameCursor] = useState(false)
+  const [showNameCursor, setShowNameCursor] = useState(!hasBooted)
 
   useEffect(() => {
-    if (!autoStart) {
+    if (!autoStart || hasBooted) {
       return
     }
 
@@ -101,6 +104,7 @@ export function useBootSequence(autoStart = true) {
 
       await new Promise((resolve) => window.setTimeout(resolve, 400))
       setPhase('complete')
+      sessionStorage.setItem('muthur_booted', 'true')
     }
 
     const timer = window.setTimeout(() => {
