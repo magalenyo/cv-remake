@@ -212,7 +212,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     id: 'bullet-heaven',
     title: 'BULLET HEAVEN DEVLOG',
     subtitle: 'UNREAL ENGINE 5 / C++',
-    description: 'Action top down shooter in which the player will experience an intense bullet heaven gameplay.',
+    heroImage: 'videos/cards/bullet-heaven-trimmed.mp4',
     techStack: ['Unreal Engine 5', 'C++'],
     links: [
       { label: 'Devlog Youtube Playlist', url: 'https://youtube.com/playlist?list=PLsPJr2L5jJ4I-f4oYgZDGTLnvKujeZJmC&si=Homx5cKNUhm0V4TX' }
@@ -239,7 +239,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     id: 'other-unreal-engine-projects',
     title: 'OTHER UNREAL ENGINE PROJECTS',
     subtitle: 'UNREAL ENGINE 5 / C++ / BLUEPRINTS',
-    description: 'Here are some small projects to learn Unreal Engine 5 with C++ and Blueprints.',
+    heroImage: 'videos/cards/simple-shooter-trimmed.mp4',
     techStack: ['Unreal Engine 5', 'C++', 'Blueprints'],
     links: [
       { label: 'Simple Shooter Github', url: 'https://github.com/magalenyo/UE5-SimpleShooter' },
