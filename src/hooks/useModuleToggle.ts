@@ -2,6 +2,19 @@ import { useCallback, useState } from 'react'
 import type { ModuleId } from '../types/modules'
 import { MODULE_IDS } from '../types/modules'
 
+const HEADER_OFFSET = 80
+
+function scrollToModule(id: ModuleId) {
+  // Use a small timeout to let the DOM update and the panel expand
+  window.setTimeout(() => {
+    const module = document.getElementById(`module-${id}`)
+    if (module) {
+      const top = module.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' })
+    }
+  }, 50)
+}
+
 export function useModuleToggle() {
   const [activeModule, setActiveModule] = useState<ModuleId | null>(null)
 
@@ -10,16 +23,16 @@ export function useModuleToggle() {
       const next = current === id ? null : id
 
       if (next) {
-        window.requestAnimationFrame(() => {
-          document.getElementById(`module-${id}`)?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-          })
-        })
+        scrollToModule(next)
       }
 
       return next
     })
+  }, [])
+
+  const openModule = useCallback((id: ModuleId) => {
+    setActiveModule(id)
+    scrollToModule(id)
   }, [])
 
   const isExpanded = useCallback(
@@ -30,6 +43,7 @@ export function useModuleToggle() {
   return {
     activeModule,
     toggleModule,
+    openModule,
     isExpanded,
     moduleIds: MODULE_IDS,
   }

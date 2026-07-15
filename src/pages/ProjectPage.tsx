@@ -13,6 +13,9 @@ export function ProjectPage() {
   const [loadingText, setLoadingText] = useState('ESTABLISHING CONNECTION...')
 
   useEffect(() => {
+    // Force scroll to top immediately on mount
+    window.scrollTo(0, 0)
+    
     // Quick thematic loading sequence
     setIsLoading(true)
     setLoadingText('ESTABLISHING CONNECTION...')
@@ -23,7 +26,7 @@ export function ProjectPage() {
       setIsLoading(false)
       // Use requestAnimationFrame to ensure the DOM has updated before scrolling
       window.requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
       })
     }, 450)
     
