@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MU/TH/UR 6000 | TERMINAL INTERFACE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#ff907f",
+                        "on-surface-variant": "#e3beb8",
+                        "on-tertiary-fixed": "#000d60",
+                        "on-primary-fixed": "#410000",
+                        "outline": "#aa8984",
+                        "on-tertiary-container": "#9ea9ff",
+                        "secondary": "#c6c6c7",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "primary-container": "#8b0000",
+                        "surface-container": "#2b1c19",
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-container": "#0025c8",
+                        "surface-container-high": "#362623",
+                        "tertiary-fixed-dim": "#bcc3ff",
+                        "surface-bright": "#473532",
+                        "surface": "#1d100e",
+                        "secondary-container": "#454747",
+                        "on-primary": "#690000",
+                        "on-tertiary": "#001a98",
+                        "primary-fixed": "#ffdad4",
+                        "on-surface": "#f8dcd8",
+                        "primary": "#ffb4a8",
+                        "on-tertiary-fixed-variant": "#0d2ccc",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-secondary-container": "#b4b5b5",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#ffb4a8",
+                        "tertiary": "#bcc3ff",
+                        "tertiary-fixed": "#dfe0ff",
+                        "surface-container-highest": "#42312e",
+                        "surface-container-lowest": "#180b09",
+                        "on-background": "#f8dcd8",
+                        "surface-dim": "#1d100e",
+                        "inverse-surface": "#f8dcd8",
+                        "on-primary-fixed-variant": "#920703",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "surface-variant": "#42312e",
+                        "inverse-primary": "#b52619",
+                        "background": "#1d100e",
+                        "inverse-on-surface": "#3d2c2a",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#5a403c",
+                        "on-secondary": "#2f3131",
+                        "surface-container-low": "#261816"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "unit": "4px",
+                        "column-count": "12"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["JetBrains Mono"],
+                        "headline-lg": ["JetBrains Mono"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["JetBrains Mono"],
+                        "body-lg": ["JetBrains Mono"],
+                        "code": ["JetBrains Mono"],
+                        "headline-md": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "code": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            cursor: crosshair;
+            color: #8B0000;
+        }
+
+        .crt-scanline {
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+            position: fixed;
+            top: 0; left: 0;
+        }
+
+        .flicker {
+            animation: flicker 0.15s infinite;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.981; }
+            5% { opacity: 0.957; }
+            10% { opacity: 0.941; }
+            15% { opacity: 0.922; }
+            20% { opacity: 0.963; }
+            25% { opacity: 0.985; }
+            30% { opacity: 0.932; }
+            35% { opacity: 0.961; }
+            40% { opacity: 0.948; }
+            45% { opacity: 0.989; }
+            50% { opacity: 0.923; }
+            55% { opacity: 0.947; }
+            60% { opacity: 0.912; }
+            65% { opacity: 0.976; }
+            70% { opacity: 0.921; }
+            75% { opacity: 0.956; }
+            80% { opacity: 0.934; }
+            85% { opacity: 0.967; }
+            90% { opacity: 0.928; }
+            95% { opacity: 0.973; }
+            100% { opacity: 0.941; }
+        }
+
+        .cursor-blink {
+            display: inline-block;
+            width: 0.6em;
+            height: 1em;
+            background-color: #8B0000;
+            animation: blink 0.8s infinite steps(2);
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .terminal-line {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        @media (min-width: 768px) {
+            .terminal-line {
+                font-size: 14px;
+            }
+        }
+
+        .navigation-block {
+            border: 1px solid #8B0000;
+            padding: 12px 24px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            text-transform: uppercase;
+            background: rgba(139, 0, 0, 0.05);
+        }
+
+        .navigation-block:hover {
+            background-color: #8B0000;
+            color: #000000;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+        }
+
+        .navigation-block.active {
+            background-color: #8B0000;
+            color: #000000;
+        }
+
+        .hidden-terminal {
+            display: none !important;
+        }
+
+        .hidden-ui {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .visible-ui {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .module-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+
+        .module-content.expanded {
+            max-height: 5000px;
+            opacity: 1;
+            margin-top: 2rem;
+        }
+
+        #main-container {
+            transition: all 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8B0000;
+        }
+
+        /* Adjust identity layout for post-boot phase */
+        #identity-header.reveal-state {
+            margin-top: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            #identity-header.reveal-state {
+                margin-top: 6rem;
+                margin-bottom: 4rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-code text-primary-container selection:bg-primary-container selection:text-black min-h-screen">
+<!-- CRT Visual Overlays -->
+<div class="crt-scanline"></div>
+<!-- Top App Bar (Initially Hidden) -->
+<nav class="hidden-ui fixed top-0 left-0 w-full z-40 flex justify-between items-center px-4 md:px-margin-desktop py-4 border-b border-primary-container bg-black/90 backdrop-blur-sm" id="site-header">
+<div class="font-headline-md text-xl md:text-headline-md font-bold tracking-tighter text-primary-container uppercase">
+        MU/TH/UR 6000
+    </div>
+<div class="hidden lg:flex gap-8">
+<button class="text-primary-container font-body-sm uppercase tracking-widest hover:bg-primary-container hover:text-black transition-colors px-2 py-1" onclick="toggleModule('ROOT_PROJECTS')">[ROOT_PROJECTS]</button>
+<button class="text-primary-container font-body-sm uppercase tracking-widest hover:bg-primary-container hover:text-black transition-colors px-2 py-1" onclick="toggleModule('IDENT_MANIFEST')">[IDENT_MANIFEST]</button>
+<button class="text-primary-container font-body-sm uppercase tracking-widest hover:bg-primary-container hover:text-black transition-colors px-2 py-1" onclick="toggleModule('CORE_UPLINK')">[CORE_UPLINK]</button>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">terminal</span>
+<span class="material-symbols-outlined text-primary-container hidden sm:inline">security</span>
+</div>
+</nav>
+<!-- Main Terminal Interface -->
+<main class="relative z-20 min-h-screen flex flex-col items-center justify-center py-20 px-6" id="main-container">
+<!-- Central Boot Sequence Focus -->
+<div class="w-full flex flex-col items-center justify-center transition-all duration-700" id="boot-focus-wrapper">
+<!-- Identity Display -->
+<div class="text-center space-y-4 mb-8 md:mb-12 opacity-0 transition-all duration-1000 ease-in-out" id="identity-header">
+<h1 class="font-headline-lg text-2xl md:text-headline-lg text-primary-container tracking-[0.1em] md:tracking-[0.2em] uppercase" id="type-name">
+<!-- Text injected by JS -->
+</h1>
+<p class="font-label-caps text-[10px] md:text-label-caps text-primary-container tracking-[0.2em] md:tracking-[0.4em] opacity-80 uppercase leading-relaxed max-w-xs md:max-w-none mx-auto" id="type-subtitle">
+<!-- Text injected by JS -->
+</p>
+</div>
+<!-- Bootup Sequence Container -->
+<div class="max-w-xl w-full text-primary-container space-y-1 px-4" id="bootup-sequence">
+<!-- Lines will be injected here via JS -->
+</div>
+<!-- Welcome message -->
+<div class="opacity-0 mt-8 font-bold tracking-[0.3em] md:tracking-[0.5em] text-primary-container uppercase transition-opacity duration-500" id="welcome-msg">
+            &gt; WELCOME, OFFICER.
+        </div>
+</div>
+<!-- Main Content (Revealed after boot) -->
+<div class="hidden-terminal flex flex-col items-center w-full max-w-6xl mt-0 opacity-0 transition-opacity duration-1000" id="main-interface">
+<!-- Dashboard Modules (Navigation Blocks) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full mb-12">
+<div class="navigation-block group" id="btn-ROOT_PROJECTS" onclick="toggleModule('ROOT_PROJECTS')">
+<div class="flex flex-col items-center gap-4 py-4">
+<span class="material-symbols-outlined text-3xl md:text-4xl">folder_managed</span>
+<span class="font-bold tracking-widest text-base md:text-lg">[ROOT_PROJECTS]</span>
+<p class="text-[10px] opacity-60 leading-tight text-center">ARCHIVE ACCESS: 98%<br/>ENCRYPTION: LEVEL 7</p>
+</div>
+</div>
+<div class="navigation-block group" id="btn-IDENT_MANIFEST" onclick="toggleModule('IDENT_MANIFEST')">
+<div class="flex flex-col items-center gap-4 py-4">
+<span class="material-symbols-outlined text-3xl md:text-4xl">fingerprint</span>
+<span class="font-bold tracking-widest text-base md:text-lg">[IDENT_MANIFEST]</span>
+<p class="text-[10px] opacity-60 leading-tight text-center">BIOMETRIC LOGS<br/>PERSONNEL FILE 2122-A</p>
+</div>
+</div>
+<div class="navigation-block group" id="btn-CORE_UPLINK" onclick="toggleModule('CORE_UPLINK')">
+<div class="flex flex-col items-center gap-4 py-4">
+<span class="material-symbols-outlined text-3xl md:text-4xl">leak_add</span>
+<span class="font-bold tracking-widest text-base md:text-lg">[CORE_UPLINK]</span>
+<p class="text-[10px] opacity-60 leading-tight text-center">DATA STREAM: ACTIVE<br/>SATELLITE SYNC: OK</p>
+</div>
+</div>
+</div>
+<!-- Integrated Content Modules -->
+<div class="w-full space-y-8">
+<!-- Projects Module -->
+<div class="module-content border border-primary-container p-6 md:p-8 bg-black/40" id="module-ROOT_PROJECTS">
+<h2 class="text-xl md:text-2xl font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase mb-8 border-b border-primary-container pb-2">DATASET: ACTIVE_DEVELOPMENT</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+<div class="space-y-4">
+<div class="aspect-video bg-surface-container overflow-hidden border border-primary-container/30">
+<img alt="Graphical Nucleus" class="w-full h-full object-cover grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvTVTrewRwlgVrQm8qRPJheOauoK4GFPgQsZj9G6yvwQ5AaxcxNStRVXNCxO836mDTVcxHL6DY9zOtGM3TqPyWLZvsC4Im8ng8Gy-uEyoBUOrb174tpzrSfysrbNwgWgX_7foW0IunRsAk1F2IrY3fESOqgjqqEYYlz-HbskSFMkYTUDAT-Lp3hLFpxEt1muMx1Nn8hkZbT0FlJrF7A6D3XK5Mw7qBkOipGWVVV_9rOWnDukdgwRZfLxP0q"/>
+</div>
+<div>
+<h3 class="font-bold tracking-widest uppercase">GRAPHICAL NUCLEUS</h3>
+<p class="text-sm opacity-80 mt-1">High-performance voxel rendering engine utilizing sparse-octree data structures.</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="aspect-video bg-surface-container overflow-hidden border border-primary-container/30">
+<img alt="Core Distortion" class="w-full h-full object-cover grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLuyybmvBnfV89PPgxIZ26MyKJW2mcLmGKMRrbVX_ooGnY9Hwjtgt2b3FYnNV0AffDvP_3Q1Q1tGaseuA1Vh5KxeVMM7mCpNe9hyswE75p_FzAmSaEikx9yVyGfNriDr-paJPxy7mPdQXhKIKaxBuUbXujT6FJ8KiFPCdujVRxuDT1ej6Uq0ngdwI4HtQoQQTxcqYX1OqPwKHO9_lB2tYzaWbUmcnO-IMPPVY6PIK0gKkTMgauawmda0tFs"/>
+</div>
+<div>
+<h3 class="font-bold tracking-widest uppercase">CORE DISTORTION</h3>
+<p class="text-sm opacity-80 mt-1">Procedural environment generator for non-Euclidean digital spaces.</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="aspect-video bg-surface-container overflow-hidden border border-primary-container/30">
+<img alt="Logic Array" class="w-full h-full object-cover grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLsIM7YiwCKQSPUkXp79p4HRl71KLBuQN-QPsYJ0KLI28upvsmbENszsSsCgP24PaSDmLCWSRR4MPlv2aB01QV8dy1PniH7_xU9UXYCGTXy55PvpvwMlWs65hvkFzRM7u8hp33rk3sR_Iw7Nl_16G3NUKbxFjHnjd5XVc-2KZyP-UYIvkvzBTjKyQcGrR-h8kjwwNNrrbA3KaxgpwT7GO_coQtji_lwg6S86L_i7hxx8XQkkYnhtRyAfBItW"/>
+</div>
+<div>
+<h3 class="font-bold tracking-widest uppercase">LOGIC ARRAY</h3>
+<p class="text-sm opacity-80 mt-1">Low-latency networking layer optimized for high-concurrency neural links.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Identity Module -->
+<div class="module-content border border-primary-container p-6 md:p-8 bg-black/40" id="module-IDENT_MANIFEST">
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="flex-1 space-y-6 w-full">
+<h2 class="text-xl md:text-2xl font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase border-b border-primary-container pb-2">BIOMETRIC_PROFILE: 2122-A</h2>
+<div class="space-y-4">
+<div class="p-4 border-l-4 border-primary-container bg-primary-container/10">
+<p class="text-base md:text-lg leading-relaxed">
+                                    Lead Systems Architect specializing in low-level engine optimization and cyber-physical interface design. 
+                                </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs md:text-sm font-label-caps">
+<div class="space-y-1">
+<span class="opacity-50">LOCATION:</span>
+<span>SECTOR 4 // NOSTROMO</span>
+</div>
+<div class="space-y-1">
+<span class="opacity-50">STATUS:</span>
+<span>AUTHORIZED PERSONNEL</span>
+</div>
+<div class="space-y-1">
+<span class="opacity-50">CLEARANCE:</span>
+<span>LEVEL 7 (CRITICAL)</span>
+</div>
+<div class="space-y-1">
+<span class="opacity-50">UPLINK:</span>
+<span>SECURE_ENCRYPTED</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-64 border border-primary-container/30 p-4 space-y-4 bg-black">
+<div class="h-32 flex items-center justify-center border border-dashed border-primary-container/50">
+<span class="material-symbols-outlined text-5xl md:text-6xl opacity-30">fingerprint</span>
+</div>
+<div class="text-[10px] space-y-1 opacity-60 uppercase font-mono">
+<div>SCANNING RETINA... OK</div>
+<div>THUMBPRINT SYNC... OK</div>
+<div>DNA MATCH... 99.98%</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Uplink Module -->
+<div class="module-content border border-primary-container p-6 md:p-8 bg-black/40" id="module-CORE_UPLINK">
+<h2 class="text-xl md:text-2xl font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase mb-8 border-b border-primary-container pb-2">COMMUNICATION_CHANNELS</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+<a class="flex items-center justify-between p-4 md:p-6 border border-primary-container/30 hover:bg-primary-container hover:text-black transition-all group" href="https://github.com">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl md:text-3xl">code</span>
+<span class="font-bold tracking-widest text-sm md:text-base">GITHUB</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-4 md:p-6 border border-primary-container/30 hover:bg-primary-container hover:text-black transition-all group" href="https://linkedin.com">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl md:text-3xl">hub</span>
+<span class="font-bold tracking-widest text-sm md:text-base">LINKEDIN</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</a>
+<button class="flex items-center justify-between p-4 md:p-6 border border-primary-container/30 hover:bg-primary-container hover:text-black transition-all group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl md:text-3xl">download</span>
+<span class="font-bold tracking-widest text-left text-sm md:text-base">FETCH<br class="hidden md:block"/>CREDENTIALS</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">description</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Terminal Diagnostic Feed (Passive) -->
+<div class="w-full border-t border-primary-container pt-6 mt-12 mb-24 md:mb-20">
+<div class="flex flex-wrap justify-between font-label-caps text-[9px] md:text-[10px] opacity-50 uppercase tracking-tighter gap-4 px-2">
+<span>STATUS: ALL SYSTEMS NOMINAL</span>
+<span>TEMP: 22.4°C</span>
+<span>MEMORY: 4096 TB</span>
+<span>TIME: 14:32:01.002</span>
+<span class="hidden sm:inline">LOCATION: 10.0.0.1 (EXTERNAL_UPLINK)</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Initially Hidden) -->
+<footer class="hidden-ui fixed bottom-0 left-0 w-full z-40 flex flex-col lg:flex-row justify-between items-center px-4 md:px-margin-desktop py-4 md:py-6 border-t border-primary-container bg-black/90 backdrop-blur-sm" id="site-footer">
+<div class="font-label-caps text-[10px] md:text-label-caps text-primary-container mb-4 lg:mb-0 text-center">
+        © 2122 WEYLAND-YUTANI CORP // BUILDING BETTER WORLDS
+    </div>
+<div class="flex gap-4 md:gap-6 font-code text-[10px] md:text-code">
+<a class="text-outline uppercase hover:text-primary-container transition-colors" href="#">SYSTEM_STATUS</a>
+<a class="text-outline uppercase hover:text-primary-container transition-colors" href="#">ENCRYPTION_LOG</a>
+<a class="text-outline uppercase hover:text-primary-container transition-colors" href="#">LOGOUT</a>
+</div>
+</footer>
+<script>
+    const bootSequence = [
+        "> INITIALIZING MU/TH/UR 6000 CORE ARCHITECTURE...",
+        "> KERNEL 0.0.1 LOADED AT 0x0000000000000",
+        "> CHECKING MEMORY PERIMETER... [OK]",
+        "> SYNCING TACTICAL OVERLAY... [OK]",
+        "> DECRYPTING ACCESS PROTOCOLS...",
+        "> LOADING MODULE: ROOT_PROJECTS... DONE",
+        "> LOADING MODULE: IDENT_MANIFEST... DONE",
+        "> LOADING MODULE: CORE_UPLINK... DONE",
+        "> BIOMETRIC AUTHENTICATION BYPASSED."
+    ];
+
+    const identityData = {
+        name: "MIGUEL ÁNGEL BUENO RIVERA",
+        subtitle: "Senior Full Stack Programmer / Game Developer"
+    };
+
+    const bootContainer = document.getElementById('bootup-sequence');
+    const mainInterface = document.getElementById('main-interface');
+    const siteHeader = document.getElementById('site-header');
+    const siteFooter = document.getElementById('site-footer');
+    const mainContainer = document.getElementById('main-container');
+    const identityHeader = document.getElementById('identity-header');
+    const nameEl = document.getElementById('type-name');
+    const subtitleEl = document.getElementById('type-subtitle');
+    const welcomeMsg = document.getElementById('welcome-msg');
+
+    async function typeText(element, text, speed = 30) {
+        element.textContent = '';
+        for (let char of text) {
+            element.textContent += char;
+            await new Promise(r => setTimeout(r, speed));
+        }
+    }
+
+    async function typeSequence() {
+        // Step 1: Type name and subtitle
+        identityHeader.style.opacity = '1';
+        const nameCursor = document.createElement('span');
+        nameCursor.className = 'cursor-blink';
+        
+        await typeText(nameEl, identityData.name, 40);
+        nameEl.appendChild(nameCursor);
+        await new Promise(r => setTimeout(r, 200));
+        await typeText(subtitleEl, identityData.subtitle, 20);
+        await new Promise(r => setTimeout(r, 400));
+
+        // Step 2: Type boot logs
+        for (let line of bootSequence) {
+            const p = document.createElement('p');
+            p.className = 'terminal-line';
+            bootContainer.appendChild(p);
+            
+            const speed = Math.random() * 10 + 5; 
+            for (let char of line) {
+                p.textContent += char;
+                await new Promise(r => setTimeout(r, speed));
+            }
+            await new Promise(r => setTimeout(r, 30)); 
+        }
+
+        await new Promise(r => setTimeout(r, 800));
+        
+        // Step 3: Fade out logs
+        bootContainer.style.transition = 'opacity 0.6s ease';
+        bootContainer.style.opacity = '0';
+        
+        await new Promise(r => setTimeout(r, 600));
+
+        // Step 4: Show Authentication message
+        welcomeMsg.style.opacity = '1';
+        await new Promise(r => setTimeout(r, 1200));
+        welcomeMsg.style.opacity = '0';
+        await new Promise(r => setTimeout(r, 400));
+
+        // Step 5: Adjust layout and Reveal UI
+        // Shift container from center-aligned to top-aligned
+        mainContainer.classList.remove('justify-center');
+        mainContainer.classList.add('justify-start');
+        
+        // Apply reveal state classes for better vertical positioning of the name/subtitle
+        identityHeader.classList.add('reveal-state');
+        identityHeader.classList.add('flicker');
+
+        siteHeader.classList.add('visible-ui');
+        siteFooter.classList.add('visible-ui');
+        
+        mainInterface.classList.remove('hidden-terminal');
+        setTimeout(() => {
+            mainInterface.style.opacity = '1';
+            bootContainer.style.display = 'none';
+        }, 100);
+    }
+
+    function toggleModule(id) {
+        const modules = ['ROOT_PROJECTS', 'IDENT_MANIFEST', 'CORE_UPLINK'];
+        
+        modules.forEach(mId => {
+            const el = document.getElementById(`module-${mId}`);
+            const btn = document.getElementById(`btn-${mId}`);
+            
+            if (mId === id) {
+                const isExpanding = !el.classList.contains('expanded');
+                el.classList.toggle('expanded');
+                btn.classList.toggle('active');
+                
+                if (isExpanding) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            } else {
+                el.classList.remove('expanded');
+                btn.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('load', () => {
+        setTimeout(typeSequence, 500);
+    });
+</script>
+</body></html>
