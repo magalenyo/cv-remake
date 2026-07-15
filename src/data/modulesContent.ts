@@ -68,7 +68,7 @@ export const projects: Project[] = [
     title: 'MOTION GRAPHICS',
     description:
       'A series of motion graphics and infinite loops rendered in Blender.',
-    imageUrl: 'images/node/node.png',
+    imageUrl: 'videos/InfiniteLoops/ILRetro.mp4',
     imageAlt: 'Motion Graphics',
   },
 ]

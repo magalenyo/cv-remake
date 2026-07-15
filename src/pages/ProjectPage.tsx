@@ -126,7 +126,7 @@ export function ProjectPage() {
               </h2>
               <div
                 className={
-                  project.id === 'unreal-engine-materials'
+                  project.id === 'unreal-engine-materials' || project.id === 'motion-graphics'
                     ? 'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'
                     : 'space-y-8'
                 }

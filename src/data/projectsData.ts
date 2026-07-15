@@ -256,7 +256,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     id: 'motion-graphics',
     title: 'MOTION GRAPHICS',
     subtitle: 'BLENDER INFINITE LOOPS',
-    heroImage: 'images/node/node.png',
+    heroImage: 'videos/InfiniteLoops/ILRetro.mp4',
     sections: [
       {
         title: 'DESCRIPTION',
@@ -268,6 +268,9 @@ export const projectsData: Record<string, ProjectDetails> = {
     links: [
       { label: 'MOTION GRAPHICS REPO', url: 'https://github.com/magalenyo/InfiniteLoops' }
     ],
-    media: []
+    media: [
+      { type: 'video', url: 'videos/InfiniteLoops/ILRetro.mp4' },
+      { type: 'video', url: 'videos/InfiniteLoops/ILTriangles.mp4' }
+    ]
   }
 }
