@@ -124,6 +124,7 @@ export const projectsData: Record<string, ProjectDetails> = {
       { type: 'video', url: 'https://www.youtube.com/embed/hq4AP1z1QZ8' },
       { type: 'video', url: 'https://www.youtube.com/embed/qf6j_g3qYKc' }
     ]
+  },
   'returnal-unreal-engine': {
     id: 'returnal-unreal-engine',
     title: 'RETURNAL UNREAL ENGINE',
