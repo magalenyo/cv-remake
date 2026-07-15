@@ -7,6 +7,7 @@ export type ProjectSection = {
   title: string
   content: string[]
   list?: { label?: string; description: string }[]
+  grid?: boolean
 }
 
 export type ProjectDetails = {
@@ -202,6 +203,7 @@ export const projectsData: Record<string, ProjectDetails> = {
       {
         title: 'MATERIALS_COLLECTION',
         content: ['The collection includes:'],
+        grid: true,
         list: [
           { label: 'Dragon', description: 'Animated dragon material.' },
           { label: 'Morphing', description: 'Geometry morphing effect.' },

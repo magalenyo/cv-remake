@@ -83,10 +83,31 @@ export function ProjectPage() {
                     <p key={idx}>{paragraph}</p>
                   ))}
                   {section.list && (
-                    <ul className="mt-4 space-y-4 border-l border-primary-container/30 pl-4">
+                    <ul
+                      className={
+                        section.grid
+                          ? 'mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'
+                          : 'mt-4 space-y-4 border-l border-primary-container/30 pl-4'
+                      }
+                    >
                       {section.list.map((item, idx) => (
-                        <li key={idx}>
-                          {item.label && <span className="font-bold text-primary-container">{item.label}: </span>}
+                        <li
+                          key={idx}
+                          className={
+                            section.grid
+                              ? 'border border-primary-container/30 bg-primary-container/5 p-4'
+                              : ''
+                          }
+                        >
+                          {item.label && (
+                            <span
+                              className={`font-bold text-primary-container ${
+                                section.grid ? 'mb-2 block border-b border-primary-container/30 pb-2' : ''
+                              }`}
+                            >
+                              {item.label}{section.grid ? '' : ': '}
+                            </span>
+                          )}
                           <span className="opacity-80">{item.description}</span>
                         </li>
                       ))}
@@ -103,7 +124,13 @@ export function ProjectPage() {
               <h2 className="border-b border-primary-container/30 pb-2 font-code text-lg font-bold uppercase tracking-widest text-primary-container">
                 [MEDIA_ARCHIVE]
               </h2>
-              <div className="space-y-8">
+              <div
+                className={
+                  project.id === 'unreal-engine-materials'
+                    ? 'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'
+                    : 'space-y-8'
+                }
+              >
                 {project.media.map((media, idx) => (
                   <div key={idx} className="aspect-video w-full border border-primary-container/30 bg-surface-container p-1">
                     {media.type === 'video' ? (
