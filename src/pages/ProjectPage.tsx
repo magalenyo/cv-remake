@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom'
 import { projectsData } from '../data/projectsData'
 import { SiteHeader } from '../components/layout/SiteHeader'
 import { SiteFooter } from '../components/layout/SiteFooter'
-import { MediaCarousel } from '../components/shared/MediaCarousel'
+import { MediaCarousel, MediaFrame } from '../components/shared/MediaCarousel'
+import { getTechBadgeClass } from '../utils/techBadgeStyles'
 
 export function ProjectPage() {
   const { id } = useParams<{ id: string }>()
@@ -12,15 +13,16 @@ export function ProjectPage() {
   const [loadingText, setLoadingText] = useState('ESTABLISHING CONNECTION...')
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-    
     // Quick thematic loading sequence
     setIsLoading(true)
     setLoadingText('ESTABLISHING CONNECTION...')
     
     const t1 = setTimeout(() => setLoadingText('DECRYPTING DATASET...'), 150)
     const t2 = setTimeout(() => setLoadingText('MOUNTING ASSETS...'), 300)
-    const t3 = setTimeout(() => setIsLoading(false), 450)
+    const t3 = setTimeout(() => {
+      setIsLoading(false)
+      window.scrollTo(0, 0)
+    }, 450)
     
     return () => {
       clearTimeout(t1)
@@ -50,7 +52,7 @@ export function ProjectPage() {
 
   return (
     <>
-      <SiteHeader visible={true} onToggleModule={() => {}} />
+      <SiteHeader visible={true} />
 
       <main className="relative z-20 flex min-h-screen flex-col items-center px-4 py-24 md:px-8 md:py-32 lg:px-12">
         {isLoading ? (
@@ -84,10 +86,7 @@ export function ProjectPage() {
             {project.techStack && project.techStack.length > 0 && (
               <div className="flex flex-wrap gap-2 pt-2">
                 {project.techStack.map((tech) => (
-                  <span 
-                    key={tech} 
-                    className="border border-primary-container/30 bg-primary-container/10 px-2 py-1 font-label-caps text-[10px] uppercase tracking-widest text-primary-container"
-                  >
+                  <span key={tech} className={getTechBadgeClass(tech)}>
                     {tech}
                   </span>
                 ))}
@@ -161,51 +160,64 @@ export function ProjectPage() {
           </div>
 
           {/* Media */}
-          {project.media.length > 0 && (
-            <section className="space-y-4 pt-8">
-              <h2 className="border-b border-primary-container/30 pb-2 font-code text-lg font-bold uppercase tracking-widest text-primary-container">
-                [MEDIA_ARCHIVE]
-              </h2>
-              
-              {project.id === 'unreal-engine-materials' || project.id === 'motion-graphics' ? (
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-                  {project.media.map((media, idx) => (
-                    <div key={idx} className="aspect-square w-full border border-primary-container/30 bg-surface-container p-1">
-                      {media.type === 'video' ? (
-                        media.url.includes('youtube.com') ? (
-                          <iframe
-                            className="h-full w-full"
-                            src={media.url}
-                            title="Video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          />
-                        ) : (
-                          <video
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="h-full w-full object-cover"
-                            src={media.url.startsWith('http') ? media.url : import.meta.env.BASE_URL + media.url}
-                          />
-                        )
-                      ) : (
-                        <img
-                          src={media.url.startsWith('http') ? media.url : import.meta.env.BASE_URL + media.url}
-                          alt={media.alt || 'Project media'}
-                          className="h-full w-full object-contain"
-                        />
-                      )}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <MediaCarousel media={project.media} />
-              )}
-            </section>
-          )}
+          {project.media.length > 0 && (() => {
+            const videos = project.media.filter((item) => item.type === 'video')
+            const images = project.media.filter((item) => item.type === 'image')
+            const isGridLayout =
+              project.id === 'unreal-engine-materials' || project.id === 'motion-graphics'
+
+            return (
+              <section className="space-y-8 pt-8">
+                <h2 className="border-b border-primary-container/30 pb-2 font-code text-lg font-bold uppercase tracking-widest text-primary-container">
+                  [MEDIA_ARCHIVE]
+                </h2>
+
+                {isGridLayout ? (
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+                    {project.media.map((media, idx) => (
+                      <div
+                        key={`${media.url}-${idx}`}
+                        className="aspect-square w-full border border-primary-container/30 bg-surface-container p-1"
+                      >
+                        <MediaFrame media={media} />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <>
+                    {videos.length > 0 && (
+                      <div className="space-y-4">
+                        <h3 className="font-code text-sm font-bold uppercase tracking-widest text-primary-container/80">
+                          [VIDEO_FEED]
+                        </h3>
+                        <div className="space-y-8">
+                          {videos.map((media, idx) => (
+                            <div
+                              key={`${media.url}-${idx}`}
+                              className="aspect-video w-full border border-primary-container/30 bg-surface-container p-1"
+                            >
+                              <MediaFrame media={media} />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {images.length > 0 && (
+                      <div className="space-y-4">
+                        {videos.length > 0 && (
+                          <h3 className="font-code text-sm font-bold uppercase tracking-widest text-primary-container/80">
+                            [IMAGE_ARCHIVE]
+                          </h3>
+                        )}
+                        <MediaCarousel media={images} />
+                      </div>
+                    )}
+                  </>
+                )}
+              </section>
+            )
+          })()}
         </div>
         )}
       </main>
