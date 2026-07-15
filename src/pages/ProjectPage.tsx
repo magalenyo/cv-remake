@@ -14,7 +14,9 @@ export function ProjectPage() {
 
   useEffect(() => {
     // Force scroll to top immediately on mount
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
     
     // Quick thematic loading sequence
     setIsLoading(true)
@@ -26,7 +28,9 @@ export function ProjectPage() {
       setIsLoading(false)
       // Use requestAnimationFrame to ensure the DOM has updated before scrolling
       window.requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+        document.documentElement.scrollTop = 0
+        document.body.scrollTop = 0
       })
     }, 450)
     
@@ -48,6 +52,7 @@ export function ProjectPage() {
           <Link
             to="/"
             state={{ openModule: 'ROOT_PROJECTS' }}
+            onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' })}
             className="mt-8 inline-block border border-primary-container px-6 py-2 font-label-caps uppercase tracking-widest transition-colors hover:bg-primary-container hover:text-black"
           >
             RETURN TO ROOT
@@ -69,11 +74,11 @@ export function ProjectPage() {
           </div>
         ) : (
           <div className="w-full max-w-6xl animate-fade-in space-y-12">
-            {/* Header */}
           <div className="space-y-4 border-b-2 border-primary-container pb-8">
             <Link
               to="/"
               state={{ openModule: 'ROOT_PROJECTS' }}
+              onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' })}
               className="group mb-8 inline-flex items-center gap-2 font-label-caps text-xs uppercase tracking-widest opacity-80 transition-opacity hover:opacity-100"
             >
               <span className="material-symbols-outlined text-lg transition-transform group-hover:-translate-x-1">
@@ -90,7 +95,6 @@ export function ProjectPage() {
               {project.subtitle}
             </p>
             
-            {/* Tech Stack Badges */}
             {project.techStack && project.techStack.length > 0 && (
               <div className="flex flex-wrap gap-2 pt-2">
                 {project.techStack.map((tech) => (
@@ -102,7 +106,6 @@ export function ProjectPage() {
             )}
           </div>
 
-          {/* Links */}
           {project.links.length > 0 && (
             <div className="flex flex-wrap gap-4">
               {project.links.map((link) => (
@@ -120,7 +123,6 @@ export function ProjectPage() {
             </div>
           )}
 
-          {/* Sections */}
           <div className="space-y-12">
             {project.sections.map((section) => (
               <section key={section.title} className="space-y-4">
@@ -167,7 +169,6 @@ export function ProjectPage() {
             ))}
           </div>
 
-          {/* Media */}
           {project.media.length > 0 && (() => {
             const videos = project.media.filter((item) => item.type === 'video')
             const images = project.media.filter((item) => item.type === 'image')
