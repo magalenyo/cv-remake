@@ -42,7 +42,7 @@ export function HomePage() {
       <SiteHeader visible={boot.showChrome} onToggleModule={toggleModule} />
 
       <main
-        className={`relative z-20 flex min-h-screen flex-col items-center px-4 py-20 md:px-8 lg:px-12 transition-all duration-[1200ms] ${
+        className={`relative z-20 flex min-h-screen w-full flex-col items-center px-4 py-20 md:px-8 lg:px-12 transition-all duration-[1200ms] ${
           boot.isComplete ? 'justify-start' : 'justify-center'
         }`}
       >
@@ -64,7 +64,7 @@ export function HomePage() {
         </div>
 
         <div
-          className={`mt-0 flex w-full max-w-6xl flex-col items-center transition-opacity duration-1000 ${
+          className={`mt-0 flex w-full max-w-5xl flex-col items-center transition-opacity duration-1000 ${
             boot.showInterface ? 'opacity-100' : 'pointer-events-none hidden opacity-0'
           }`}
         >
