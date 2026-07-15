@@ -1,11 +1,13 @@
 import { Routes, Route } from 'react-router-dom'
 import { CrtOverlay } from './components/layout/CrtOverlay'
+import { ScrollToTop } from './components/layout/ScrollToTop'
 import { HomePage } from './pages/HomePage'
 import { ProjectPage } from './pages/ProjectPage'
 
 function App() {
   return (
     <div className="min-h-screen font-code text-primary-container selection:bg-primary-container selection:text-black">
+      <ScrollToTop />
       <CrtOverlay />
       <Routes>
         <Route path="/" element={<HomePage />} />

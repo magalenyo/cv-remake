@@ -26,7 +26,7 @@ export function ProjectPage() {
       setIsLoading(false)
       // Use requestAnimationFrame to ensure the DOM has updated before scrolling
       window.requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
       })
     }, 450)
     
