@@ -53,7 +53,21 @@ export const projectsData: Record<string, ProjectDetails> = {
       { label: 'VIDEO PLAYLIST', url: 'https://youtube.com/playlist?list=PLqL7Y-7Sr4iVxBafXM63IY3DBSXzyIoYY' }
     ],
     media: [
-      { type: 'video', url: 'https://www.youtube.com/embed/XNsSLHtClBM' }
+      { type: 'video', url: 'https://www.youtube.com/embed/XNsSLHtClBM' },
+      { type: 'image', url: 'images/carousel-boundead/1.png' },
+      { type: 'image', url: 'images/carousel-boundead/2.png' },
+      { type: 'image', url: 'images/carousel-boundead/3.png' },
+      { type: 'image', url: 'images/carousel-boundead/4.png' },
+      { type: 'image', url: 'images/carousel-boundead/5.png' },
+      { type: 'image', url: 'images/carousel-boundead/6.png' },
+      { type: 'image', url: 'images/carousel-boundead/7.png' },
+      { type: 'image', url: 'images/carousel-boundead/8.png' },
+      { type: 'image', url: 'images/carousel-boundead/9.png' },
+      { type: 'image', url: 'images/carousel-boundead/10.png' },
+      { type: 'image', url: 'images/carousel-boundead/11.png' },
+      { type: 'image', url: 'images/carousel-boundead/12.png' },
+      { type: 'image', url: 'images/carousel-boundead/13.png' },
+      { type: 'image', url: 'images/carousel-boundead/14.png' }
     ]
   },
   'real-disunity': {

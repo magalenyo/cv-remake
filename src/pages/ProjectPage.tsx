@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { projectsData } from '../data/projectsData'
 import { SiteHeader } from '../components/layout/SiteHeader'
 import { SiteFooter } from '../components/layout/SiteFooter'
+import { MediaCarousel } from '../components/shared/MediaCarousel'
 
 export function ProjectPage() {
   const { id } = useParams<{ id: string }>()
@@ -151,45 +152,44 @@ export function ProjectPage() {
               <h2 className="border-b border-primary-container/30 pb-2 font-code text-lg font-bold uppercase tracking-widest text-primary-container">
                 [MEDIA_ARCHIVE]
               </h2>
-              <div
-                className={
-                  project.id === 'unreal-engine-materials' || project.id === 'motion-graphics'
-                    ? 'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'
-                    : 'space-y-8'
-                }
-              >
-                {project.media.map((media, idx) => (
-                  <div key={idx} className={project.id === 'unreal-engine-materials' || project.id === 'motion-graphics' ? 'aspect-square w-full border border-primary-container/30 bg-surface-container p-1' : 'aspect-video w-full border border-primary-container/30 bg-surface-container p-1'}>
-                    {media.type === 'video' ? (
-                      media.url.includes('youtube.com') ? (
-                        <iframe
-                          className="h-full w-full"
-                          src={media.url}
-                          title="Video player"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
+              
+              {project.id === 'unreal-engine-materials' || project.id === 'motion-graphics' ? (
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+                  {project.media.map((media, idx) => (
+                    <div key={idx} className="aspect-square w-full border border-primary-container/30 bg-surface-container p-1">
+                      {media.type === 'video' ? (
+                        media.url.includes('youtube.com') ? (
+                          <iframe
+                            className="h-full w-full"
+                            src={media.url}
+                            title="Video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        ) : (
+                          <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="h-full w-full object-cover"
+                            src={media.url.startsWith('http') ? media.url : import.meta.env.BASE_URL + media.url}
+                          />
+                        )
                       ) : (
-                        <video
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="h-full w-full object-cover"
+                        <img
                           src={media.url.startsWith('http') ? media.url : import.meta.env.BASE_URL + media.url}
+                          alt={media.alt || 'Project media'}
+                          className="h-full w-full object-contain"
                         />
-                      )
-                    ) : (
-                      <img
-                        src={media.url.startsWith('http') ? media.url : import.meta.env.BASE_URL + media.url}
-                        alt={media.alt || 'Project media'}
-                        className="h-full w-full object-contain"
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <MediaCarousel media={project.media} />
+              )}
             </section>
           )}
         </div>
