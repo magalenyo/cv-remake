@@ -63,7 +63,7 @@ export function HomePage() {
           </div>
 
         <div
-          className={`mt-0 flex w-full max-w-6xl flex-col items-center transition-opacity duration-1000 ${
+          className={`mt-0 flex w-full max-w-7xl flex-col items-center transition-opacity duration-1000 ${
             boot.showInterface ? 'opacity-100' : 'pointer-events-none hidden opacity-0'
           }`}
         >
