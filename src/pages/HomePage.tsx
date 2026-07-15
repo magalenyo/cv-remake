@@ -42,43 +42,43 @@ export function HomePage() {
       <SiteHeader visible={boot.showChrome} onToggleModule={toggleModule} />
 
       <main
-        className={`relative z-20 flex min-h-screen w-full flex-col items-center px-4 py-20 md:px-8 lg:px-12 transition-all duration-[1200ms] ${
-          boot.isComplete ? 'justify-start' : 'justify-center'
-        }`}
+        className="relative z-20 flex min-h-screen w-full flex-col items-center px-4 py-20 md:px-8 lg:px-12 transition-all duration-[1200ms]"
       >
-        <div className="flex w-full flex-col items-center justify-center transition-all duration-700">
-          <IdentityHeader
-            visible={boot.showIdentity}
-            reveal={boot.identityReveal}
-            name={boot.name}
-            subtitle={boot.subtitle}
-            showNameCursor={boot.showNameCursor}
-          />
+        <div className="my-auto flex w-full flex-col items-center">
+          <div className="flex w-full flex-col items-center justify-center transition-all duration-700">
+            <IdentityHeader
+              visible={boot.showIdentity}
+              reveal={boot.identityReveal}
+              name={boot.name}
+              subtitle={boot.subtitle}
+              showNameCursor={boot.showNameCursor}
+            />
 
-          {!boot.isComplete && (
-            <>
-              <BootSequence lines={boot.bootLines} visible={boot.bootVisible} />
-              <WelcomeMessage visible={boot.welcomeVisible} />
-            </>
-          )}
-        </div>
-
-        <div
-          className={`mt-0 flex w-full max-w-5xl flex-col items-center transition-opacity duration-1000 ${
-            boot.showInterface ? 'opacity-100' : 'pointer-events-none hidden opacity-0'
-          }`}
-        >
-          <ModuleNavigation activeModule={activeModule} onToggleModule={toggleModule} />
-
-          <div className="w-full">
-            {activeModule && ActiveModuleView ? (
-              <ModulePanel id={activeModule}>
-                <ActiveModuleView />
-              </ModulePanel>
-            ) : null}
+            {!boot.isComplete && (
+              <>
+                <BootSequence lines={boot.bootLines} visible={boot.bootVisible} />
+                <WelcomeMessage visible={boot.welcomeVisible} />
+              </>
+            )}
           </div>
 
-          <DiagnosticFeed />
+          <div
+            className={`mt-0 flex w-full max-w-5xl flex-col items-center transition-opacity duration-1000 ${
+              boot.showInterface ? 'opacity-100' : 'pointer-events-none hidden opacity-0'
+            }`}
+          >
+            <ModuleNavigation activeModule={activeModule} onToggleModule={toggleModule} />
+
+            <div className="w-full">
+              {activeModule && ActiveModuleView ? (
+                <ModulePanel id={activeModule}>
+                  <ActiveModuleView />
+                </ModulePanel>
+              ) : null}
+            </div>
+
+            <DiagnosticFeed />
+          </div>
         </div>
       </main>
 

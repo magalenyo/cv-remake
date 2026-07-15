@@ -75,6 +75,7 @@ body {
   background-color: #000000;
   cursor: crosshair;
   color: #8b0000;
+  overflow-anchor: none;
 }
 
 .material-symbols-outlined {
@@ -159,6 +160,60 @@ body {
   animation: fade-in 0.4s ease-out forwards;
 }
 
+.tech-badge {
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--font-label-caps);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tech-badge--default,
+.tech-badge--inhouse {
+  border-color: rgb(139 0 0 / 0.45);
+  background-color: rgb(139 0 0 / 0.1);
+  color: #ff907f;
+}
+
+.tech-badge--cpp {
+  border-color: rgb(90 143 168 / 0.55);
+  background-color: rgb(90 143 168 / 0.1);
+  color: #8ec4dc;
+}
+
+.tech-badge--csharp {
+  border-color: rgb(122 90 154 / 0.55);
+  background-color: rgb(122 90 154 / 0.1);
+  color: #b49ad4;
+}
+
+.tech-badge--unity {
+  border-color: rgb(106 106 106 / 0.55);
+  background-color: rgb(106 106 106 / 0.12);
+  color: #b8b8b8;
+}
+
+.tech-badge--ue5 {
+  border-color: rgb(168 106 42 / 0.55);
+  background-color: rgb(168 106 42 / 0.1);
+  color: #d4a060;
+}
+
+.tech-badge--blueprints {
+  border-color: rgb(74 122 154 / 0.55);
+  background-color: rgb(74 122 154 / 0.1);
+  color: #7ab0d0;
+}
+
+.tech-badge--blender {
+  border-color: rgb(168 90 40 / 0.55);
+  background-color: rgb(168 90 40 / 0.1);
+  color: #d08050;
+}
+
 .terminal-line {
   display: block;
   margin-bottom: 4px;
@@ -181,6 +236,12 @@ body {
   background: rgba(139, 0, 0, 0.05);
 }
 
+@media (max-width: 639px) {
+  .navigation-block {
+    padding: 8px 4px;
+  }
+}
+
 .navigation-block:hover {
   background-color: #8b0000;
   color: #000000;
@@ -193,26 +254,16 @@ body {
 }
 
 .module-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
-  opacity: 0;
-}
-
-.module-content.expanded {
-  max-height: 5000px;
-  opacity: 1;
   margin-top: 2rem;
+  animation: fade-in 0.3s ease-out forwards;
 }
 
 .identity-reveal {
-  margin-top: 4rem;
   margin-bottom: 3rem;
 }
 
 @media (min-width: 768px) {
   .identity-reveal {
-    margin-top: 6rem;
     margin-bottom: 4rem;
   }
 }
