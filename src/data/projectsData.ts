@@ -15,6 +15,7 @@ export type ProjectDetails = {
   title: string
   subtitle: string
   heroImage: string
+  techStack?: string[]
   sections: ProjectSection[]
   links: ProjectLink[]
   media: { type: 'image' | 'video'; url: string; alt?: string }[]
@@ -26,6 +27,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     title: 'BOUNDEAD',
     subtitle: '2.5D ADVENTURE / PLATFORMER IN UNITY',
     heroImage: 'https://lh3.googleusercontent.com/aida/AP1WRLvTVTrewRwlgVrQm8qRPJheOauoK4GFPgQsZj9G6yvwQ5AaxcxNStRVXNCxO836mDTVcxHL6DY9zOtGM3TqPyWLZvsC4Im8ng8Gy-uEyoBUOrb174tpzrSfysrbNwgWgX_7foW0IunRsAk1F2IrY3fESOqgjqqEYYlz-HbskSFMkYTUDAT-Lp3hLFpxEt1muMx1Nn8hkZbT0FlJrF7A6D3XK5Mw7qBkOipGWVVV_9rOWnDukdgwRZfLxP0q',
+    techStack: ['C#', 'Unity'],
     sections: [
       {
         title: 'DESCRIPTION',
@@ -75,6 +77,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     title: 'REAL DISUNITY',
     subtitle: 'CUSTOM C++ / OPENGL GAME ENGINE',
     heroImage: 'https://lh3.googleusercontent.com/aida/AP1WRLuyybmvBnfV89PPgxIZ26MyKJW2mcLmGKMRrbVX_ooGnY9Hwjtgt2b3FYnNV0AffDvP_3Q1Q1tGaseuA1Vh5KxeVMM7mCpNe9hyswE75p_FzAmSaEikx9yVyGfNriDr-paJPxy7mPdQXhKIKaxBuUbXujT6FJ8KiFPCdujVRxuDT1ej6Uq0ngdwI4HtQoQQTxcqYX1OqPwKHO9_lB2tYzaWbUmcnO-IMPPVY6PIK0gKkTMgauawmda0tFs',
+    techStack: ['C++'],
     sections: [
       {
         title: 'DESCRIPTION',
@@ -98,6 +101,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     title: 'TESSERACT',
     subtitle: 'ADVANCED C++ GAME ENGINE',
     heroImage: 'https://lh3.googleusercontent.com/aida/AP1WRLsIM7YiwCKQSPUkXp79p4HRl71KLBuQN-QPsYJ0KLI28upvsmbENszsSsCgP24PaSDmLCWSRR4MPlv2aB01QV8dy1PniH7_xU9UXYCGTXy55PvpvwMlWs65hvkFzRM7u8hp33rk3sR_Iw7Nl_16G3NUKbxFjHnjd5XVc-2KZyP-UYIvkvzBTjKyQcGrR-h8kjwwNNrrbA3KaxgpwT7GO_coQtji_lwg6S86L_i7hxx8XQkkYnhtRyAfBItW',
+    techStack: ['C++'],
     sections: [
       {
         title: 'DESCRIPTION',
@@ -132,6 +136,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     title: 'SHUTDOWN',
     subtitle: 'TOP-DOWN ACTION SHOOTER',
     heroImage: 'https://lh3.googleusercontent.com/aida/AP1WRLvTVTrewRwlgVrQm8qRPJheOauoK4GFPgQsZj9G6yvwQ5AaxcxNStRVXNCxO836mDTVcxHL6DY9zOtGM3TqPyWLZvsC4Im8ng8Gy-uEyoBUOrb174tpzrSfysrbNwgWgX_7foW0IunRsAk1F2IrY3fESOqgjqqEYYlz-HbskSFMkYTUDAT-Lp3hLFpxEt1muMx1Nn8hkZbT0FlJrF7A6D3XK5Mw7qBkOipGWVVV_9rOWnDukdgwRZfLxP0q',
+    techStack: ['C++', 'In-house Engine'],
     sections: [
       {
         title: 'DESCRIPTION',
@@ -154,6 +159,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     title: 'RETURNAL UNREAL ENGINE',
     subtitle: 'HOUSEMARQUE\'S RETURNAL IN UNREAL ENGINE 5',
     heroImage: 'https://lh3.googleusercontent.com/aida/AP1WRLvTVTrewRwlgVrQm8qRPJheOauoK4GFPgQsZj9G6yvwQ5AaxcxNStRVXNCxO836mDTVcxHL6DY9zOtGM3TqPyWLZvsC4Im8ng8Gy-uEyoBUOrb174tpzrSfysrbNwgWgX_7foW0IunRsAk1F2IrY3fESOqgjqqEYYlz-HbskSFMkYTUDAT-Lp3hLFpxEt1muMx1Nn8hkZbT0FlJrF7A6D3XK5Mw7qBkOipGWVVV_9rOWnDukdgwRZfLxP0q',
+    techStack: ['C++', 'Unreal Engine 5'],
     sections: [
       {
         title: 'DESCRIPTION',
@@ -292,6 +298,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     title: 'UE5 MATERIALS',
     subtitle: 'UNREAL ENGINE 5 SHADERS & MATERIALS',
     heroImage: 'images/ue-materials/magic/cardview.mp4',
+    techStack: ['C++', 'Unreal Engine 5'],
     sections: [
       {
         title: 'DESCRIPTION',
@@ -338,6 +345,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     title: 'MOTION GRAPHICS',
     subtitle: 'BLENDER INFINITE LOOPS',
     heroImage: 'videos/InfiniteLoops/ILRetro.mp4',
+    techStack: ['Blender'],
     sections: [
       {
         title: 'DESCRIPTION',

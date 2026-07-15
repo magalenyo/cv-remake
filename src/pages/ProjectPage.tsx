@@ -79,6 +79,20 @@ export function ProjectPage() {
             <p className="font-label-caps text-xs uppercase tracking-[0.2em] opacity-80 md:text-sm">
               {project.subtitle}
             </p>
+            
+            {/* Tech Stack Badges */}
+            {project.techStack && project.techStack.length > 0 && (
+              <div className="flex flex-wrap gap-2 pt-2">
+                {project.techStack.map((tech) => (
+                  <span 
+                    key={tech} 
+                    className="border border-primary-container/30 bg-primary-container/10 px-2 py-1 font-label-caps text-[10px] uppercase tracking-widest text-primary-container"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Links */}
