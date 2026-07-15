@@ -1,3 +1,33 @@
+import { useState, type ReactNode } from 'react'
+
+function CollapsibleSection({ title, children }: { title: string; children: ReactNode }) {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <div className="pt-8">
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex w-full items-center justify-between border-b border-primary-container/30 pb-2 text-left font-code text-lg font-bold uppercase tracking-widest text-primary-container transition-colors hover:bg-primary-container/10"
+      >
+        <span>[{title}]</span>
+        <span className="material-symbols-outlined transition-transform duration-300" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+          expand_more
+        </span>
+      </button>
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${
+          isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="mt-6 space-y-6">{children}</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function IdentityModule() {
   return (
     <div className="flex flex-col items-start gap-8 md:flex-row">
@@ -8,13 +38,6 @@ export function IdentityModule() {
 
           <div className="space-y-4">
             <div className="border-l-4 border-primary-container bg-primary-container/10 p-4 space-y-4">
-              <div className="float-right ml-4 mb-2 h-24 w-24 overflow-hidden border-2 border-primary-container/50 md:h-32 md:w-32">
-                <img
-                  src="images/profile-picture.jpg"
-                  alt="Miguel Ángel Bueno Rivera"
-                  className="h-full w-full object-cover grayscale contrast-125 sepia-[.5] hue-rotate-[320deg] saturate-[2]"
-                />
-              </div>
               <p className="text-sm leading-relaxed md:text-base">
                 Greetings! My name is Miguel, a 29-year-old Computer Engineer specialized in Software Development. My lifelong passion for video games inspired me to earn a Master's Degree in Advanced Programming for AAA Video Games from Universitat Politècnica de Catalunya (UPC).
               </p>
@@ -48,82 +71,74 @@ export function IdentityModule() {
               </div>
             </div>
 
-            <div className="pt-8">
-              <h3 className="mb-4 border-b border-primary-container/30 pb-2 font-code text-lg font-bold uppercase tracking-widest text-primary-container">
-                [EXPERIENCE_LOG]
-              </h3>
-              <div className="space-y-6">
-                <article className="border-l border-primary-container/30 pl-4">
-                  <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
-                    August 2022 - Present
-                  </div>
-                  <h4 className="font-bold text-primary-container uppercase tracking-widest">Next Digital</h4>
-                  <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Senior Full Stack Developer</div>
-                  <p className="text-xs leading-relaxed opacity-90 md:text-sm">
-                    Working for Iberia Airlines in the Innovation Team as a Full Stack Developer, leading and contributing to rapid proof-of-concept projects across multiple domains. Most applications have been developed with Java / Kotlin and Angular / React, while also designing and implementing web services using Python and Node.js (NestJS), leveraging both RESTful and GraphQL APIs.
-                  </p>
-                </article>
+            <CollapsibleSection title="EXPERIENCE_LOG">
+              <article className="border-l border-primary-container/30 pl-4">
+                <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
+                  August 2022 - Present
+                </div>
+                <h4 className="font-bold text-primary-container uppercase tracking-widest">Next Digital</h4>
+                <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Senior Full Stack Developer</div>
+                <p className="text-xs leading-relaxed opacity-90 md:text-sm">
+                  Working for Iberia Airlines in the Innovation Team as a Full Stack Developer, leading and contributing to rapid proof-of-concept projects across multiple domains. Most applications have been developed with Java / Kotlin and Angular / React, while also designing and implementing web services using Python and Node.js (NestJS), leveraging both RESTful and GraphQL APIs.
+                </p>
+              </article>
 
-                <article className="border-l border-primary-container/30 pl-4">
-                  <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
-                    September 2019 - July 2022
-                  </div>
-                  <h4 className="font-bold text-primary-container uppercase tracking-widest">NTT Data Europe & Latam</h4>
-                  <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Full Stack Developer Analyst</div>
-                  <p className="text-xs leading-relaxed opacity-90 md:text-sm">
-                    Contributed to multiple enterprise projects for major insurance clients, focusing on delivering robust, maintainable, and user-centric applications. Gained hands-on experience in full stack development, technical documentation, and small-scale project management.
-                  </p>
-                </article>
+              <article className="border-l border-primary-container/30 pl-4">
+                <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
+                  September 2019 - July 2022
+                </div>
+                <h4 className="font-bold text-primary-container uppercase tracking-widest">NTT Data Europe & Latam</h4>
+                <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Full Stack Developer Analyst</div>
+                <p className="text-xs leading-relaxed opacity-90 md:text-sm">
+                  Contributed to multiple enterprise projects for major insurance clients, focusing on delivering robust, maintainable, and user-centric applications. Gained hands-on experience in full stack development, technical documentation, and small-scale project management.
+                </p>
+              </article>
 
-                <article className="border-l border-primary-container/30 pl-4">
-                  <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
-                    February 2019 - June 2019
-                  </div>
-                  <h4 className="font-bold text-primary-container uppercase tracking-widest">EUTI Software</h4>
-                  <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Software Developer</div>
-                  <p className="text-xs leading-relaxed opacity-90 md:text-sm">
-                    Development of a multi-platform application made in Xamarin.Forms (C#), published for Android and iOS Smartphones. Maintenance of a server made in Visual Basic .Net.
-                  </p>
-                </article>
-              </div>
-            </div>
+              <article className="border-l border-primary-container/30 pl-4">
+                <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
+                  February 2019 - June 2019
+                </div>
+                <h4 className="font-bold text-primary-container uppercase tracking-widest">EUTI Software</h4>
+                <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Software Developer</div>
+                <p className="text-xs leading-relaxed opacity-90 md:text-sm">
+                  Development of a multi-platform application made in Xamarin.Forms (C#), published for Android and iOS Smartphones. Maintenance of a server made in Visual Basic .Net.
+                </p>
+              </article>
+            </CollapsibleSection>
 
-            <div className="pt-8">
-              <h3 className="mb-4 border-b border-primary-container/30 pb-2 font-code text-lg font-bold uppercase tracking-widest text-primary-container">
-                [EDUCATION_LOG]
-              </h3>
-              <div className="space-y-6">
-                <article className="border-l border-primary-container/30 pl-4">
-                  <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
-                    2020 - 2021
-                  </div>
-                  <h4 className="font-bold text-primary-container uppercase tracking-widest">Master's Degree in Advanced Programming for AAA Video Games</h4>
-                  <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Universitat Politècnica de Catalunya (UPC), Barcelona</div>
-                  <p className="text-xs leading-relaxed opacity-90 md:text-sm">
-                    Learned how to build a 3D Game Engine from scratch in C++, OpenGL and GLSL. Organized as a real company with Art students to build our own Engine and Videogame as a final project.
-                  </p>
-                </article>
+            <CollapsibleSection title="EDUCATION_LOG">
+              <article className="border-l border-primary-container/30 pl-4">
+                <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
+                  2020 - 2021
+                </div>
+                <h4 className="font-bold text-primary-container uppercase tracking-widest">Master's Degree in Advanced Programming for AAA Video Games</h4>
+                <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Universitat Politècnica de Catalunya (UPC), Barcelona</div>
+                <p className="text-xs leading-relaxed opacity-90 md:text-sm">
+                  Learned how to build a 3D Game Engine from scratch in C++, OpenGL and GLSL. Organized as a real company with Art students to build our own Engine and Videogame as a final project.
+                </p>
+              </article>
 
-                <article className="border-l border-primary-container/30 pl-4">
-                  <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
-                    2014 - 2019
-                  </div>
-                  <h4 className="font-bold text-primary-container uppercase tracking-widest">Bachelor's Degree in Computer Engineering</h4>
-                  <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Universitat de Girona (UDG), Girona</div>
-                  <p className="text-xs leading-relaxed opacity-90 md:text-sm">
-                    Specialized in Software Engineering, studying and applying software patterns.
-                  </p>
-                </article>
-              </div>
-            </div>
+              <article className="border-l border-primary-container/30 pl-4">
+                <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
+                  2014 - 2019
+                </div>
+                <h4 className="font-bold text-primary-container uppercase tracking-widest">Bachelor's Degree in Computer Engineering</h4>
+                <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Universitat de Girona (UDG), Girona</div>
+                <p className="text-xs leading-relaxed opacity-90 md:text-sm">
+                  Specialized in Software Engineering, studying and applying software patterns.
+                </p>
+              </article>
+            </CollapsibleSection>
           </div>
         </div>
 
         <aside className="hidden w-full space-y-4 border border-primary-container/30 bg-black p-4 md:block md:w-64">
-          <div className="flex h-32 items-center justify-center border border-dashed border-primary-container/50">
-            <span className="material-symbols-outlined text-5xl opacity-30 md:text-6xl">
-              fingerprint
-            </span>
+          <div className="flex aspect-square w-full items-center justify-center overflow-hidden border border-dashed border-primary-container/50 p-1">
+            <img
+              src="images/profile-picture.jpg"
+              alt="Miguel Ángel Bueno Rivera"
+              className="h-full w-full object-cover grayscale contrast-125 sepia-[.5] hue-rotate-[320deg] saturate-[2]"
+            />
           </div>
           <div className="space-y-1 font-mono text-[10px] uppercase opacity-60">
             <div>SCANNING RETINA... OK</div>
