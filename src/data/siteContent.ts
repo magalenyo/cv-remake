@@ -1,0 +1,16 @@
+export const identityData = {
+  name: 'MIGUEL ÁNGEL BUENO RIVERA',
+  subtitle: 'Senior Full Stack Programmer / Game Developer',
+} as const
+
+export const bootSequence = [
+  '> INITIALIZING MU/TH/UR 6000 CORE ARCHITECTURE...',
+  '> KERNEL 0.0.1 LOADED AT 0x0000000000000',
+  '> CHECKING MEMORY PERIMETER... [OK]',
+  '> SYNCING TACTICAL OVERLAY... [OK]',
+  '> DECRYPTING ACCESS PROTOCOLS...',
+  '> LOADING MODULE: ROOT_PROJECTS... DONE',
+  '> LOADING MODULE: IDENT_MANIFEST... DONE',
+  '> LOADING MODULE: CORE_UPLINK... DONE',
+  '> BIOMETRIC AUTHENTICATION BYPASSED.',
+] as const
