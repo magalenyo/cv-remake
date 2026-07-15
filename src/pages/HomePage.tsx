@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { BootSequence } from '../components/boot/BootSequence'
 import { IdentityHeader } from '../components/boot/IdentityHeader'
 import { WelcomeMessage } from '../components/boot/WelcomeMessage'
+import { Animation2GridBackground } from '../components/layout/Animation2GridBackground'
 import { SiteFooter } from '../components/layout/SiteFooter'
 import { SiteHeader } from '../components/layout/SiteHeader'
 import { DiagnosticFeed } from '../components/modules/DiagnosticFeed'
@@ -39,6 +40,7 @@ export function HomePage() {
 
   return (
     <>
+      <Animation2GridBackground />
       <SiteHeader visible={boot.showChrome} onToggleModule={toggleModule} />
 
       <main

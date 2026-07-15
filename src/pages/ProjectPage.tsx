@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { projectsData } from '../data/projectsData'
 import { SiteHeader } from '../components/layout/SiteHeader'
 import { SiteFooter } from '../components/layout/SiteFooter'
+import { Animation2GridBackground } from '../components/layout/Animation2GridBackground'
 import { MediaCarousel, MediaFrame } from '../components/shared/MediaCarousel'
 import { getTechBadgeClass } from '../utils/techBadgeStyles'
 
@@ -44,7 +45,9 @@ export function ProjectPage() {
 
   if (!project) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-black text-primary-container">
+      <>
+        <Animation2GridBackground />
+        <div className="relative z-20 flex min-h-screen items-center justify-center text-primary-container">
         <div className="text-center">
           <h1 className="font-headline-lg text-4xl uppercase tracking-widest text-error">
             ERR_NOT_FOUND
@@ -60,11 +63,13 @@ export function ProjectPage() {
           </Link>
         </div>
       </div>
+      </>
     )
   }
 
   return (
     <>
+      <Animation2GridBackground />
       <SiteHeader visible={true} />
 
       <main className="relative z-20 flex min-h-screen flex-col items-center px-4 py-24 md:px-8 md:py-32 lg:px-12">
