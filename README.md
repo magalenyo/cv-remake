@@ -29,7 +29,13 @@ npm run preview
 
 Pushes to `main` trigger `.github/workflows/deploy-pages.yml`, which builds and deploys to GitHub Pages.
 
-Ensure **Settings → Pages → Build and deployment → Source** is set to **GitHub Actions**.
+### One-time setup
+
+1. Open **Settings → Pages → Build and deployment → Source**.
+2. Select **GitHub Actions** (not “Deploy from a branch”).
+3. Re-run the latest **Deploy to GitHub Pages** workflow from the **Actions** tab.
+
+If Pages is set to serve the `main` branch root, the site will load the dev `index.html` and fail with a 404 on `/src/main.tsx`. The workflow builds the production bundle into `dist/` and must be the Pages source.
 
 The Vite `base` path is `/cv-remake/` for project-page hosting.
 
