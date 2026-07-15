@@ -8,15 +8,15 @@ type SiteHeaderProps = {
 export function SiteHeader({ visible, onToggleModule }: SiteHeaderProps) {
   return (
     <nav
-      className={`fixed top-0 left-0 z-40 flex w-full items-center justify-between border-b border-primary-container bg-black/90 px-4 py-4 backdrop-blur-sm transition-opacity duration-1000 md:px-margin-desktop ${
+      className={`fixed top-0 left-0 z-40 flex w-full items-center border-b border-primary-container bg-black/90 px-4 py-4 backdrop-blur-sm transition-opacity duration-1000 md:px-margin-desktop ${
         visible ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
       }`}
     >
-      <div className="font-headline-md text-xl font-bold uppercase tracking-tighter text-primary-container md:text-headline-md">
+      <div className="flex-1 font-headline-md text-xl font-bold uppercase tracking-tighter text-primary-container md:text-headline-md">
         MU/TH/UR 6000
       </div>
 
-      <div className="hidden gap-8 lg:flex">
+      <div className="hidden justify-center gap-8 lg:flex">
         {(['ROOT_PROJECTS', 'IDENT_MANIFEST', 'CORE_UPLINK'] as const).map((id) => (
           <button
             key={id}
@@ -29,7 +29,7 @@ export function SiteHeader({ visible, onToggleModule }: SiteHeaderProps) {
         ))}
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex flex-1 items-center justify-end gap-4">
         <span className="material-symbols-outlined text-primary-container">terminal</span>
         <span className="material-symbols-outlined hidden text-primary-container sm:inline">
           security
