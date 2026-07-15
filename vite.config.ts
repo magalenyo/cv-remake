@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: '/cv-remake/',
   server: {
-    // Allow ngrok and similar tunnels when testing on mobile during dev
-    allowedHosts: ['.ngrok-free.app', '.ngrok.io'],
+    // Allow any host to connect (useful for ngrok and other tunnels during dev)
+    allowedHosts: true,
   },
 })
