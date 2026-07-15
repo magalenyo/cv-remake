@@ -108,7 +108,7 @@ export function ProjectPage() {
                   <div key={idx} className="aspect-video w-full border border-primary-container/30 bg-surface-container p-1">
                     {media.type === 'video' ? (
                       <iframe
-                        className="h-full w-full grayscale transition-all duration-500 hover:grayscale-0"
+                        className="h-full w-full"
                         src={media.url}
                         title="Video player"
                         frameBorder="0"
@@ -117,7 +117,7 @@ export function ProjectPage() {
                       />
                     ) : (
                       <img
-                        src={media.url}
+                        src={media.url.startsWith('http') ? media.url : import.meta.env.BASE_URL + media.url}
                         alt={media.alt || 'Project media'}
                         className="h-full w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
                       />

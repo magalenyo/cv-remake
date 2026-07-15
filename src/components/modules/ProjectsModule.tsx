@@ -20,7 +20,7 @@ export function ProjectsModule() {
                 alt={project.imageAlt}
                 className="h-full w-full object-cover opacity-70 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-focus:opacity-100 group-focus:grayscale-0"
                 loading="lazy"
-                src={project.imageUrl}
+                src={project.imageUrl.startsWith('http') ? project.imageUrl : import.meta.env.BASE_URL + project.imageUrl}
               />
             </div>
             <div>

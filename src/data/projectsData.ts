@@ -73,7 +73,10 @@ export const projectsData: Record<string, ProjectDetails> = {
       { label: 'ISITREALENGINE REPO', url: 'https://github.com/magalenyo/RealDisunity/releases/tag/v1.1' },
       { label: 'REALDISUNITY REPO', url: 'https://github.com/magalenyo/RealDisunity/releases/tag/2.0' }
     ],
-    media: []
+    media: [
+      { type: 'image', url: 'images/engines/RealDisunityEngine/RealDisunity1.png' },
+      { type: 'image', url: 'images/engines/RealDisunityEngine/RealDisunity2.png' }
+    ]
   },
   'tesseract': {
     id: 'tesseract',
@@ -101,7 +104,13 @@ export const projectsData: Record<string, ProjectDetails> = {
     links: [
       { label: 'TESSERACT REPO', url: 'https://github.com/PenteractStudios/Tesseract' }
     ],
-    media: []
+    media: [
+      { type: 'image', url: 'images/engines/TesseractEngine/tesseract.png' },
+      { type: 'image', url: 'images/engines/TesseractEngine/nav_1.gif' },
+      { type: 'image', url: 'images/engines/TesseractEngine/nav_2.gif' },
+      { type: 'image', url: 'images/engines/TesseractEngine/nav_3.gif' },
+      { type: 'image', url: 'images/engines/TesseractEngine/nav_4.gif' }
+    ]
   },
   'shutdown': {
     id: 'shutdown',
@@ -170,7 +179,12 @@ export const projectsData: Record<string, ProjectDetails> = {
     ],
     media: [
       { type: 'video', url: 'https://www.youtube.com/embed/GBGyvQ0MmYU' },
-      { type: 'video', url: 'https://www.youtube.com/embed/R4kpB3jB7HE' }
+      { type: 'video', url: 'https://www.youtube.com/embed/R4kpB3jB7HE' },
+      { type: 'image', url: 'images/projects/returnal/bt_ixion_general.png' },
+      { type: 'image', url: 'images/projects/returnal/bt_ixion_phase_1.png' },
+      { type: 'image', url: 'images/projects/returnal/bt_ixion_phase_2.png' },
+      { type: 'image', url: 'images/projects/returnal/bt_ixion_phase_2_1.png' },
+      { type: 'image', url: 'images/projects/returnal/bt_ixion_phase_2_2.png' }
     ]
   }
 }
