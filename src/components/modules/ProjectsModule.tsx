@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { projects } from '../../data/modulesContent'
 
 export function ProjectsModule() {
@@ -9,20 +10,26 @@ export function ProjectsModule() {
 
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
         {projects.map((project) => (
-          <article key={project.title} className="space-y-4">
-            <div className="aspect-video overflow-hidden border border-primary-container/30 bg-surface-container">
+          <Link
+            key={project.id}
+            to={`/project/${project.id}`}
+            className="group space-y-4 outline-none"
+          >
+            <div className="aspect-video overflow-hidden border border-primary-container/30 bg-surface-container transition-colors group-hover:border-primary-container group-focus:border-primary-container">
               <img
                 alt={project.imageAlt}
-                className="h-full w-full object-cover opacity-70 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0"
+                className="h-full w-full object-cover opacity-70 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-focus:opacity-100 group-focus:grayscale-0"
                 loading="lazy"
                 src={project.imageUrl}
               />
             </div>
             <div>
-              <h3 className="font-bold uppercase tracking-widest">{project.title}</h3>
+              <h3 className="font-bold uppercase tracking-widest transition-colors group-hover:text-white group-focus:text-white">
+                {project.title}
+              </h3>
               <p className="mt-1 text-sm opacity-80">{project.description}</p>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </>
