@@ -17,6 +17,8 @@ export function SiteHeader({ visible, onToggleModule }: SiteHeaderProps) {
       return
     }
 
+    // Scroll to top instantly before navigating back to home
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     navigate('/', { state: { openModule: id } })
   }
 
