@@ -56,14 +56,6 @@ export const projects: Project[] = [
     imageAlt: 'Unreal Engine 5 Materials',
   },
   {
-    id: 'node-express-api',
-    title: 'NODE EXPRESS API',
-    description:
-      'REST API built with Node.js and Express, connected to an external MongoDB database using Mongoose.',
-    imageUrl: 'images/node/node.png',
-    imageAlt: 'Node Express API',
-  },
-  {
     id: 'motion-graphics',
     title: 'MOTION GRAPHICS',
     description:

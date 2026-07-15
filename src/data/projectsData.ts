@@ -233,25 +233,6 @@ export const projectsData: Record<string, ProjectDetails> = {
       { type: 'video', url: 'images/ue-materials/screen/video.mp4' }
     ]
   },
-  'node-express-api': {
-    id: 'node-express-api',
-    title: 'NODE EXPRESS API',
-    subtitle: 'NODE.JS + EXPRESS + MONGODB',
-    heroImage: 'images/node/node.png',
-    sections: [
-      {
-        title: 'DESCRIPTION',
-        content: [
-          'Since my expertise on backend development is with Java and SpringBoot, to learn more about other technologies, I decided to create an API Rest on Node and Express.',
-          'The API Rest has several endpoints developed and is connected to an external MongoDB database with the use of Mongoose.'
-        ]
-      }
-    ],
-    links: [
-      { label: 'NODE API REPO', url: 'https://github.com/magalenyo/NodeAPI' }
-    ],
-    media: []
-  },
   'motion-graphics': {
     id: 'motion-graphics',
     title: 'MOTION GRAPHICS',
