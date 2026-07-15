@@ -30,8 +30,8 @@ export function ProjectPage() {
     <>
       <SiteHeader visible={true} onToggleModule={() => {}} />
 
-      <main className="relative z-20 flex min-h-screen flex-col items-center px-6 py-24 md:py-32">
-        <div className="w-full max-w-4xl space-y-12">
+      <main className="relative z-20 flex min-h-screen flex-col items-center px-4 py-24 md:px-8 md:py-32 lg:px-12">
+        <div className="w-full max-w-6xl space-y-12">
           {/* Header */}
           <div className="space-y-4 border-b-2 border-primary-container pb-8">
             <Link
