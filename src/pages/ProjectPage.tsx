@@ -21,7 +21,10 @@ export function ProjectPage() {
     const t2 = setTimeout(() => setLoadingText('MOUNTING ASSETS...'), 300)
     const t3 = setTimeout(() => {
       setIsLoading(false)
-      window.scrollTo(0, 0)
+      // Use requestAnimationFrame to ensure the DOM has updated before scrolling
+      window.requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+      })
     }, 450)
     
     return () => {
