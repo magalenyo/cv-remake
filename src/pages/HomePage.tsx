@@ -62,11 +62,11 @@ export function HomePage() {
             )}
           </div>
 
-          <div
-            className={`mt-0 flex w-full max-w-5xl flex-col items-center transition-opacity duration-1000 ${
-              boot.showInterface ? 'opacity-100' : 'pointer-events-none hidden opacity-0'
-            }`}
-          >
+        <div
+          className={`mt-0 flex w-full max-w-6xl flex-col items-center transition-opacity duration-1000 ${
+            boot.showInterface ? 'opacity-100' : 'pointer-events-none hidden opacity-0'
+          }`}
+        >
             <ModuleNavigation activeModule={activeModule} onToggleModule={toggleModule} />
 
             <div className="w-full">
