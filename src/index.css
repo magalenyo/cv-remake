@@ -5,6 +5,9 @@
   --theme-primary: #ff8f00;
   --theme-primary-light: #ffe082;
   --theme-bg: #000000;
+  --crt-chroma-left: color-mix(in srgb, var(--theme-primary) 5%, transparent);
+  --crt-chroma-center: color-mix(in srgb, var(--theme-primary-light) 3%, transparent);
+  --crt-chroma-right: color-mix(in srgb, var(--theme-primary) 4%, transparent);
 }
 
 .theme-scarlet {
@@ -137,12 +140,18 @@ body {
   z-index: 50;
   background:
     linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
-    linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+    linear-gradient(
+      90deg,
+      var(--crt-chroma-left),
+      var(--crt-chroma-center),
+      var(--crt-chroma-right)
+    );
   background-size: 100% 4px, 3px 100%;
   pointer-events: none;
   position: fixed;
   top: 0;
   left: 0;
+  transition: opacity 0.3s ease;
 }
 
 .flicker {
