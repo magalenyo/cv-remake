@@ -41,16 +41,10 @@ export function IdentityModule() {
           <div className="space-y-4">
             <div className="border-l-4 border-primary-container bg-primary-container/10 p-4 space-y-4">
               <p className="text-sm leading-relaxed md:text-base">
-                Greetings! My name is Miguel, a 29-year-old Computer Engineer specialized in Software Development. My lifelong passion for video games inspired me to earn a Master's Degree in Advanced Programming for AAA Video Games from Universitat Politècnica de Catalunya (UPC).
+                Greetings! I'm Miguel — a Computer Engineer based in Barcelona with 7+ years building web applications. A Master's in AAA Game Programming from UPC still shapes how I approach systems, performance, and craft.
               </p>
               <p className="text-sm leading-relaxed md:text-base">
-                I currently work as a Full Stack Developer at Next Digital, collaborating with Iberia Airlines. With over six years of professional experience, I’ve built a strong background in developing scalable, high-quality, and well-tested web applications using technologies such as Angular, React, Java Spring Boot, NestJS, and Python.
-              </p>
-              <p className="text-sm leading-relaxed md:text-base">
-                My work emphasizes clean architecture, performance, and maintainability across both frontend and backend systems. My relentless curiosity and drive to explore emerging technologies have made me a highly adaptable, detail-oriented, and proactive developer.
-              </p>
-              <p className="text-sm leading-relaxed md:text-base">
-                Beyond my professional pursuits, I’m deeply passionate about video game development, 3D rendering and modeling, app development, and even the culinary arts — always seeking creativity and challenge in everything I do.
+                I work as a Senior Full Stack Developer at Next Digital for Iberia Airlines, shipping rapid proof-of-concept products across AI, e-commerce, and AWS. Off the clock, you'll find me in game dev, 3D work, or tinkering with side projects.
               </p>
             </div>
 
@@ -61,11 +55,11 @@ export function IdentityModule() {
               </div>
               <div className="space-y-1">
                 <span className="opacity-50">ROLE:</span>
-                <div>FULL STACK DEVELOPER</div>
+                <div>SENIOR FULL STACK DEVELOPER</div>
               </div>
               <div className="space-y-1">
                 <span className="opacity-50">EXPERIENCE:</span>
-                <div>6+ YEARS</div>
+                <div>7+ YEARS</div>
               </div>
               <div className="space-y-1">
                 <span className="opacity-50">SPECIALTY:</span>
@@ -80,9 +74,22 @@ export function IdentityModule() {
                 </div>
                 <h4 className="font-bold text-primary-container uppercase tracking-widest">Next Digital</h4>
                 <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Senior Full Stack Developer</div>
-                <p className="text-xs leading-relaxed opacity-90 md:text-sm">
-                  Working for Iberia Airlines in the Innovation Team as a Full Stack Developer, leading and contributing to rapid proof-of-concept projects across multiple domains. Most applications have been developed with Java / Kotlin and Angular / React, while also designing and implementing web services using Python and Node.js (NestJS), leveraging both RESTful and GraphQL APIs.
-                </p>
+                <div className="space-y-4 text-xs leading-relaxed opacity-90 md:text-sm">
+                  <p>
+                    Working for Iberia Airlines in the Innovation Team as a Full Stack Developer, leading and contributing to rapid proof-of-concept projects across multiple domains. Most applications have been developed with Java / Kotlin and Angular / React, while also designing and implementing web services using Python and Node.js (NestJS), leveraging both RESTful and GraphQL APIs.
+                  </p>
+                  <ul className="space-y-1 border-l border-primary-container/30 pl-4">
+                    <li>ChatGPT / Claude Apps</li>
+                    <li>AI-powered chatbots</li>
+                    <li>E-commerce solutions</li>
+                    <li>Event-driven AWS-based applications</li>
+                    <li>Serverless AWS architectures</li>
+                    <li>Dashboard creation and application monitoring</li>
+                  </ul>
+                  <p>
+                    Focused on developing high-quality, thoroughly tested applications with clean and scalable architectures. Extensive experience across AWS cloud services, including Lambda, DynamoDB, S3, CloudFront, API Gateway, Secrets Manager, and CloudWatch, among others — covering infrastructure, storage, and security aspects. Skilled in working with PostgreSQL and other relational databases, and experienced in CI/CD automation to ensure efficient, reliable, and maintainable delivery pipelines.
+                  </p>
+                </div>
               </article>
 
               <article className="border-l border-primary-container/30 pl-4">
