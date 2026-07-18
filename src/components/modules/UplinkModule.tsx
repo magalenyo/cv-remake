@@ -4,13 +4,12 @@ function LinkedInIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 34 34"
+      viewBox="0 0 24 24"
       aria-hidden="true"
-      role="img"
       fill="currentColor"
       className={className}
     >
-      <path d="M34 2.5v29a2.5 2.5 0 0 1-2.5 2.5h-29A2.5 2.5 0 0 1 0 31.5v-29A2.5 2.5 0 0 1 2.5 0h29A2.5 2.5 0 0 1 34 2.5M10 13H5v16h5zm.45-5.5a2.88 2.88 0 0 0-2.86-2.9H7.5a2.9 2.9 0 0 0 0 5.8 2.88 2.88 0 0 0 2.95-2.81zM29 19.28c0-4.81-3.06-6.68-6.1-6.68a5.7 5.7 0 0 0-5.06 2.58h-.14V13H13v16h5v-8.51a3.32 3.32 0 0 1 3-3.58h.19c1.59 0 2.77 1 2.77 3.52V29h5z" />
+      <path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.762 2.239 5 5 5h14c2.761 0 5-2.238 5-5V5c0-2.761-2.239-5-5-5zm-11 19H3v-9h5v9zM5.5 8.5C4.121 8.5 3 7.379 3 6s1.121-2.5 2.5-2.5S8 4.621 8 6s-1.121 2.5-2.5 2.5zm13.5 10.5h-5v-4.5c0-1.21-.49-2.53-2.12-2.53-1.15 0-1.86.79-2.17 1.55-.11.27-.14.65-.14 1.03V19h-5V9h5v1.45c.66-1 1.84-2.21 4.24-2.21 3.1 0 5.45 2.02 5.45 5.36V19z" />
     </svg>
   )
 }
@@ -37,31 +36,33 @@ function UplinkLink({
 }) {
   return (
     <a
-      className="group relative flex flex-col items-center justify-center gap-3 border border-primary-container/30 p-4 text-center text-primary-container transition-all hover:bg-primary-container hover:text-white md:gap-4 md:p-6"
+      className="group flex items-center justify-between border border-primary-container/30 p-4 text-primary-container transition-all hover:bg-primary-container hover:text-black md:p-6"
       href={href}
       rel="noreferrer"
       target="_blank"
       download={download ? '' : undefined}
     >
-      <div className={uplinkIconBoxClass}>
-        {brand === 'linkedin' ? (
-          <LinkedInIcon className="h-full w-full" />
-        ) : (
-          <span className="material-symbols-outlined text-2xl leading-none md:text-3xl">{icon}</span>
-        )}
+      <div className="flex items-center gap-4">
+        <div className={uplinkIconBoxClass}>
+          {brand === 'linkedin' ? (
+            <LinkedInIcon className="h-full w-full" />
+          ) : (
+            <span className="material-symbols-outlined text-2xl leading-none md:text-3xl">{icon}</span>
+          )}
+        </div>
+        <span className="text-left text-sm font-bold tracking-widest md:text-base">
+          {multiline ? (
+            <>
+              FETCH
+              <br className="hidden md:block" />
+              CREDENTIALS
+            </>
+          ) : (
+            label
+          )}
+        </span>
       </div>
-      <span className="text-sm font-bold tracking-widest md:text-base">
-        {multiline ? (
-          <>
-            FETCH
-            <br className="hidden md:block" />
-            CREDENTIALS
-          </>
-        ) : (
-          label
-        )}
-      </span>
-      <span className="material-symbols-outlined absolute right-3 top-3 opacity-0 transition-opacity group-hover:opacity-100 md:right-4 md:top-4">
+      <span className="material-symbols-outlined opacity-0 transition-opacity group-hover:opacity-100">
         {trailingIcon}
       </span>
     </a>
