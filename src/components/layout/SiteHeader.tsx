@@ -33,7 +33,7 @@ export function SiteHeader({ visible, onToggleModule }: SiteHeaderProps) {
       </div>
 
       <div className="hidden justify-center gap-8 lg:flex">
-        {(['ROOT_PROJECTS', 'IDENT_MANIFEST', 'CORE_UPLINK'] as const).map((id) => (
+        {(['ROOT_PROJECTS', 'IDENT_MANIFEST', 'LINK_MANIFEST'] as const).map((id) => (
           <button
             key={id}
             type="button"

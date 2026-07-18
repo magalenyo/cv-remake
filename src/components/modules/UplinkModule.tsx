@@ -48,7 +48,7 @@ export function UplinkModule() {
   return (
     <>
       <h2 className="mb-8 border-b border-primary-container pb-2 text-xl font-bold uppercase tracking-[0.2em] md:text-2xl md:tracking-[0.3em]">
-        COMMUNICATION_CHANNELS
+        LINK_MANIFEST
         <span aria-hidden="true" className="cursor-blink" />
       </h2>
 

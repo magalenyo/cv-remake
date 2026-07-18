@@ -20,10 +20,10 @@ const navigationItems: Array<{
     descriptionLines: ['BIOMETRIC LOGS', 'PERSONNEL FILE 2122-A'],
   },
   {
-    id: 'CORE_UPLINK',
-    icon: 'leak_add',
-    label: 'CORE_UPLINK',
-    descriptionLines: ['DATA STREAM: ACTIVE', 'SATELLITE SYNC: OK'],
+    id: 'LINK_MANIFEST',
+    icon: 'link',
+    label: 'LINK_MANIFEST',
+    descriptionLines: ['GITHUB · LINKEDIN · CV', 'CONTACT ENDPOINTS'],
   },
 ]
 

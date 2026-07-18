@@ -19,7 +19,7 @@ import type { ModuleId } from '../types/modules'
 const moduleViews: Record<ModuleId, ComponentType> = {
   ROOT_PROJECTS: ProjectsModule,
   IDENT_MANIFEST: IdentityModule,
-  CORE_UPLINK: UplinkModule,
+  LINK_MANIFEST: UplinkModule,
 }
 
 export function HomePage() {
