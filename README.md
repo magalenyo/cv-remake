@@ -2,7 +2,7 @@
 
 Personal CV site built from a [Google Stitch](https://stitch.withgoogle.com/) terminal design — translated from HTML to **Vite + React + TypeScript + Tailwind CSS v4**.
 
-Live site: https://magalenyo.github.io/cv-remake/
+Live site: https://miguelangelbuenorivera.com/ (also https://magalenyo.github.io/cv-remake/ until custom domain is configured)
 
 ## Stack
 
@@ -37,7 +37,7 @@ Pushes to `main` trigger `.github/workflows/deploy-pages.yml`, which builds and 
 
 If Pages is set to serve the `main` branch root, the site will load the dev `index.html` and fail with a 404 on `/src/main.tsx`. The workflow builds the production bundle into `dist/` and must be the Pages source.
 
-The Vite `base` path is `/cv-remake/` for project-page hosting.
+The Vite `base` path is `/` for custom-domain hosting on GitHub Pages. Use `/cv-remake/` only if serving from the project URL without a custom domain.
 
 ## Design source
 
