@@ -134,14 +134,25 @@ export const projectsData: Record<string, ProjectDetails> = {
   'shutdown': {
     id: 'shutdown',
     title: 'SHUTDOWN',
-    subtitle: 'TOP-DOWN ACTION SHOOTER',
+    subtitle: 'TOP-DOWN ACTION SHOOTER — MASTER\'S FINAL PROJECT',
     heroImage: 'https://lh3.googleusercontent.com/aida/AP1WRLvTVTrewRwlgVrQm8qRPJheOauoK4GFPgQsZj9G6yvwQ5AaxcxNStRVXNCxO836mDTVcxHL6DY9zOtGM3TqPyWLZvsC4Im8ng8Gy-uEyoBUOrb174tpzrSfysrbNwgWgX_7foW0IunRsAk1F2IrY3fESOqgjqqEYYlz-HbskSFMkYTUDAT-Lp3hLFpxEt1muMx1Nn8hkZbT0FlJrF7A6D3XK5Mw7qBkOipGWVVV_9rOWnDukdgwRZfLxP0q',
-    techStack: ['C++', 'In-house Engine'],
+    techStack: ['C++', 'Tesseract Engine'],
     sections: [
       {
         title: 'DESCRIPTION',
         content: [
-          "In the Master's degree, as part of our final project, with our Tesseract Engine, we created a top down action shooter video game called Shutdown."
+          "Shutdown is the final video game project of my Master's Degree in Advanced Programming for AAA Video Games. Built with the in-house Tesseract Engine, it is a top-down action shooter developed as a team alongside Art students, following a full production pipeline from start to finish.",
+          "The program was organized as a real studio: we shipped both the engine and the game as our capstone, with a public trailer and full gameplay release."
+        ]
+      },
+      {
+        title: 'GAMEPLAY_CONTRIBUTIONS',
+        content: ['My work on Shutdown focused on gameplay systems, scenes, and production:'],
+        list: [
+          { label: 'Scene Management', description: 'Creation and management of all game scenes: main menu, level 1, level 2, boss level, pause menu, and death screen.' },
+          { label: 'Final Boss', description: 'Fully customizable bullet-hell boss — parameters designed so new attack patterns can be added easily.' },
+          { label: 'UI & Behaviors', description: 'UI scripts and animations, plus gameplay scripts for simple enemy and entity behaviors.' },
+          { label: 'Team Lead', description: 'Gameplay team lead in the final sprints: assisted producers with team organization, managed gameplay developers, and handled general bug fixing across the project.' }
         ]
       }
     ],
