@@ -297,7 +297,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     id: 'unreal-engine-materials',
     title: 'UE5 MATERIALS',
     subtitle: 'UNREAL ENGINE 5 SHADERS & MATERIALS',
-    heroImage: 'images/ue-materials/magic/cardview.mp4',
+    heroImage: 'images/ue-materials/magic/video2.mp4',
     techStack: ['C++', 'Unreal Engine 5'],
     sections: [
       {
@@ -329,7 +329,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     ],
     media: [
       { type: 'video', url: 'images/ue-materials/dragon/video.mp4' },
-      { type: 'video', url: 'images/ue-materials/morphing/cardview.mp4' },
+      { type: 'video', url: 'images/ue-materials/morphing/video.mp4' },
       { type: 'video', url: 'images/ue-materials/volumetric-ice/video.mp4' },
       { type: 'video', url: 'images/ue-materials/glitter/video.mp4' },
       { type: 'video', url: 'images/ue-materials/magic/video.mp4' },

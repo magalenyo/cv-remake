@@ -60,7 +60,7 @@ export const projects: Project[] = [
     title: 'UE5 MATERIALS',
     description:
       'A collection of Unreal Engine 5 materials and shaders exploring various rendering techniques.',
-    imageUrl: 'images/ue-materials/magic/cardview.mp4',
+    imageUrl: 'images/ue-materials/magic/video2.mp4',
     imageAlt: 'Unreal Engine 5 Materials',
   },
   {
