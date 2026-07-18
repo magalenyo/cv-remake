@@ -39,6 +39,8 @@ If Pages is set to serve the `main` branch root, the site will load the dev `ind
 
 The Vite `base` path is `/` for custom-domain hosting on GitHub Pages. Use `/cv-remake/` only if serving from the project URL without a custom domain.
 
+Project pages use clean URLs (e.g. `/projects/boundead`) via `BrowserRouter`. The build copies `index.html` to `404.html` so GitHub Pages serves the SPA for direct links and refreshes.
+
 ## Design source
 
 The original Stitch export lives in `stitch-design/` (`code.html`, `DESIGN.md`).

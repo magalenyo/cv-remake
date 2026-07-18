@@ -13,7 +13,7 @@ export function ProjectsModule() {
         {projects.map((project) => (
           <Link
             key={project.id}
-            to={`/project/${project.id}`}
+            to={`/projects/${project.id}`}
             className="group space-y-4 outline-none"
             onClick={() => {
               window.scrollTo(0, 0)

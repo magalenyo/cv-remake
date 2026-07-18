@@ -13,7 +13,7 @@ function App() {
       {/* <ThemeSwitcher /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/project/:id" element={<ProjectPage />} />
+        <Route path="/projects/:id" element={<ProjectPage />} />
       </Routes>
     </div>
   )
