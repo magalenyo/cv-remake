@@ -84,7 +84,8 @@ export const projects: Project[] = [
 export type UplinkChannel = {
   label: string
   href?: string
-  icon: string
+  icon?: string
+  iconSrc?: string
   trailingIcon: string
   multiline?: boolean
   download?: boolean
@@ -92,15 +93,9 @@ export type UplinkChannel = {
 
 export const uplinkChannels: UplinkChannel[] = [
   {
-    label: 'GITHUB',
-    href: 'https://github.com/magalenyo',
-    icon: 'code',
-    trailingIcon: 'open_in_new',
-  },
-  {
     label: 'LINKEDIN',
     href: 'https://www.linkedin.com/in/miguel-angel-bueno-rivera/',
-    icon: 'hub',
+    iconSrc: 'images/icon-linkedIn.svg',
     trailingIcon: 'open_in_new',
   },
   {
@@ -116,5 +111,11 @@ export const uplinkChannels: UplinkChannel[] = [
     href: 'mailto:magalenyo7@gmail.com',
     icon: 'mail',
     trailingIcon: 'send',
+  },
+  {
+    label: 'GITHUB',
+    href: 'https://github.com/magalenyo',
+    icon: 'code',
+    trailingIcon: 'open_in_new',
   },
 ]

@@ -1,15 +1,21 @@
 import { uplinkChannels } from '../../data/modulesContent'
 
+function resolveMediaUrl(url: string) {
+  return url.startsWith('http') ? url : import.meta.env.BASE_URL + url
+}
+
 function UplinkLink({
   href,
   icon,
+  iconSrc,
   label,
   trailingIcon,
   multiline = false,
   download = false,
 }: {
   href: string
-  icon: string
+  icon?: string
+  iconSrc?: string
   label: string
   trailingIcon: string
   multiline?: boolean
@@ -24,7 +30,16 @@ function UplinkLink({
       download={download ? '' : undefined}
     >
       <div className="flex items-center gap-4">
-        <span className="material-symbols-outlined text-2xl md:text-3xl">{icon}</span>
+        {iconSrc ? (
+          <img
+            src={resolveMediaUrl(iconSrc)}
+            alt=""
+            aria-hidden="true"
+            className="h-7 w-7 brightness-0 invert group-hover:brightness-100 group-hover:invert-0 md:h-8 md:w-8"
+          />
+        ) : (
+          <span className="material-symbols-outlined text-2xl md:text-3xl">{icon}</span>
+        )}
         <span className="text-left text-sm font-bold tracking-widest md:text-base">
           {multiline ? (
             <>
@@ -58,6 +73,7 @@ export function UplinkModule() {
             key={channel.label}
             href={channel.href ?? '#'}
             icon={channel.icon}
+            iconSrc={channel.iconSrc}
             label={channel.label}
             multiline={channel.multiline}
             trailingIcon={channel.trailingIcon}
