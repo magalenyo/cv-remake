@@ -119,13 +119,26 @@ export function IdentityModule() {
             <CollapsibleSection title="EDUCATION_LOG">
               <article className="border-l border-primary-container/30 pl-4">
                 <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
-                  2020 - 2021
+                  October 2020 - November 2021
                 </div>
                 <h4 className="font-bold text-primary-container uppercase tracking-widest">Master's Degree in Advanced Programming for AAA Video Games</h4>
                 <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Universitat Politècnica de Catalunya (UPC), Barcelona</div>
-                <p className="text-xs leading-relaxed opacity-90 md:text-sm">
-                  Learned how to build a 3D Game Engine from scratch in C++, OpenGL and GLSL. Organized as a real company with Art students to build our own Engine and Videogame as a final project.
-                </p>
+                <div className="space-y-4 text-xs leading-relaxed opacity-90 md:text-sm">
+                  <p>Grade with distinction — 10/10.</p>
+                  <p>
+                    Learned how to build a 3D game engine from scratch in C++, OpenGL, and GLSL. The program covered video game engine foundations and the full creation process from start to finish, organized as a real company with Art students to build our own engine and video game as a final project.
+                  </p>
+                  <ul className="space-y-1 border-l border-primary-container/30 pl-4">
+                    <li>Development of a 3D game engine in C++ and OpenGL (Tesseract Engine)</li>
+                    <li>Graphics: UI shaders, Dissolve shader (Simplex Noise Map), chromatic aberration, MSAA integration</li>
+                    <li>UI components for scenes: 2D Transform, Text, Image, and others</li>
+                    <li>Navigation module: Recast & Detour integration for NavMesh, NavAgent, and NavObstacle</li>
+                    <li>Development of Shutdown, a 3D top-down shooter in C++ — game trailer and full gameplay release</li>
+                    <li>Scene creation and management across main menu, levels, boss level, pause, and death screens</li>
+                    <li>Final boss bullet-hell system, UI scripts, animations, and simple behavior scripts</li>
+                    <li>Gameplay team lead in final sprints: team organization, developer management, and bug fixing</li>
+                  </ul>
+                </div>
               </article>
 
               <article className="border-l border-primary-container/30 pl-4">
