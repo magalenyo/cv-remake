@@ -79,12 +79,13 @@ export function IdentityModule() {
                     Working for Iberia Airlines in the Innovation Team as a Full Stack Developer, leading and contributing to rapid proof-of-concept projects across multiple domains. Most applications have been developed with Java / Kotlin and Angular / React, while also designing and implementing web services using Python and Node.js (NestJS), leveraging both RESTful and GraphQL APIs.
                   </p>
                   <ul className="space-y-1 border-l border-primary-container/30 pl-4">
-                    <li>ChatGPT / Claude Apps</li>
+                    <li>ChatGPT / Claude Apps (MCP Servers)</li>
                     <li>AI-powered chatbots</li>
                     <li>E-commerce solutions</li>
                     <li>Event-driven AWS-based applications</li>
                     <li>Serverless AWS architectures</li>
                     <li>Dashboard creation and application monitoring</li>
+                    <li>Infrastructure creation with Terraform (IaC)</li>
                   </ul>
                   <p>
                     Focused on developing high-quality, thoroughly tested applications with clean and scalable architectures. Extensive experience across AWS cloud services, including Lambda, DynamoDB, S3, CloudFront, API Gateway, Secrets Manager, and CloudWatch, among others — covering infrastructure, storage, and security aspects. Skilled in working with PostgreSQL and other relational databases, and experienced in CI/CD automation to ensure efficient, reliable, and maintainable delivery pipelines.
