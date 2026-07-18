@@ -330,7 +330,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     media: [
       { type: 'video', url: 'images/ue-materials/dragon/video.mp4' },
       { type: 'video', url: 'images/ue-materials/morphing/video.mp4' },
-      { type: 'video', url: 'images/ue-materials/volumetric-ice/video.mp4' },
+      { type: 'video', url: 'images/ue-materials/volumetric-ice/video2.mp4' },
       { type: 'video', url: 'images/ue-materials/glitter/video.mp4' },
       { type: 'video', url: 'images/ue-materials/magic/video.mp4' },
       { type: 'video', url: 'images/ue-materials/slime/video.mp4' },
