@@ -136,7 +136,7 @@ export const projectsData: Record<string, ProjectDetails> = {
     title: 'SHUTDOWN',
     subtitle: 'TOP-DOWN ACTION SHOOTER — MASTER\'S FINAL PROJECT',
     heroImage: 'https://lh3.googleusercontent.com/aida/AP1WRLvTVTrewRwlgVrQm8qRPJheOauoK4GFPgQsZj9G6yvwQ5AaxcxNStRVXNCxO836mDTVcxHL6DY9zOtGM3TqPyWLZvsC4Im8ng8Gy-uEyoBUOrb174tpzrSfysrbNwgWgX_7foW0IunRsAk1F2IrY3fESOqgjqqEYYlz-HbskSFMkYTUDAT-Lp3hLFpxEt1muMx1Nn8hkZbT0FlJrF7A6D3XK5Mw7qBkOipGWVVV_9rOWnDukdgwRZfLxP0q',
-    techStack: ['C++', 'Tesseract Engine'],
+    techStack: ['C++', 'In-house Engine (Tesseract)'],
     sections: [
       {
         title: 'DESCRIPTION',
