@@ -85,7 +85,7 @@ export type UplinkChannel = {
   label: string
   href?: string
   icon?: string
-  iconSrc?: string
+  brand?: 'linkedin'
   trailingIcon: string
   multiline?: boolean
   download?: boolean
@@ -95,7 +95,7 @@ export const uplinkChannels: UplinkChannel[] = [
   {
     label: 'LINKEDIN',
     href: 'https://www.linkedin.com/in/miguel-angel-bueno-rivera/',
-    iconSrc: 'images/icon-linkedIn.svg',
+    brand: 'linkedin',
     trailingIcon: 'open_in_new',
   },
   {
