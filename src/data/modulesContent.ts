@@ -28,7 +28,7 @@ export const projects: Project[] = [
     title: 'BOUNDEAD',
     description:
       '2.5D adventure/platform videogame in Unity featuring combat, experience systems, and multiple enemy types.',
-    imageUrl: 'images/carousel-boundead/1.png',
+    imageUrl: 'videos/cards/boundead-trimmed.mp4',
     imageAlt: 'Boundead',
   },
   {
