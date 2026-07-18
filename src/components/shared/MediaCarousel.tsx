@@ -73,7 +73,7 @@ export function MediaCarousel({ media }: MediaCarouselProps) {
               type="button"
               onClick={goToPrevious}
               aria-label="Previous image"
-              className="absolute left-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-primary-container/50 bg-black/80 text-primary-container transition-colors hover:border-primary-container hover:bg-primary-container hover:text-black"
+              className="absolute left-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center border border-primary-container/50 bg-black/80 text-primary-container transition-colors hover:border-primary-container hover:bg-primary-container hover:text-black"
             >
               <span className="material-symbols-outlined">chevron_left</span>
             </button>
@@ -81,7 +81,7 @@ export function MediaCarousel({ media }: MediaCarouselProps) {
               type="button"
               onClick={goToNext}
               aria-label="Next image"
-              className="absolute right-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-primary-container/50 bg-black/80 text-primary-container transition-colors hover:border-primary-container hover:bg-primary-container hover:text-black"
+              className="absolute right-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center border border-primary-container/50 bg-black/80 text-primary-container transition-colors hover:border-primary-container hover:bg-primary-container hover:text-black"
             >
               <span className="material-symbols-outlined">chevron_right</span>
             </button>

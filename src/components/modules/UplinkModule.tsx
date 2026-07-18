@@ -37,7 +37,7 @@ function UplinkLink({
 }) {
   return (
     <a
-      className="group flex items-center justify-between border border-primary-container/30 p-4 text-primary-container transition-all hover:bg-primary-container hover:text-white md:p-6"
+      className="group flex items-center justify-between border border-primary-container/30 p-4 text-primary-container transition-all hover:bg-primary-container hover:text-black md:p-6"
       href={href}
       rel="noreferrer"
       target="_blank"
