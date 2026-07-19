@@ -41,10 +41,10 @@ export function IdentityModule() {
           <div className="space-y-4">
             <div className="border-l-4 border-primary-container bg-primary-container/10 p-4 space-y-4">
               <p className="text-sm leading-relaxed md:text-base">
-                Greetings! I'm Miguel — a Computer Engineer based in Barcelona with 7+ years building web applications. A Master's in AAA Game Programming from UPC still shapes how I approach systems, performance, and craft.
+                I'm Miguel, a Computer Engineer based in Barcelona with 7+ years of experience building web applications. A Master's in AAA Game Programming from UPC still influences how I approach systems, performance, and craft.
               </p>
               <p className="text-sm leading-relaxed md:text-base">
-                I work as a Senior Full Stack Developer at Next Digital for Iberia Airlines, shipping rapid proof-of-concept products across AI, e-commerce, and AWS. Off the clock, you'll find me in game dev, 3D work, or tinkering with side projects.
+                I currently work as a Senior Full Stack Developer at Next Digital for Iberia Airlines, building POCs across AI, e-commerce, and cloud-based solutions. Throughout my career, I've been part of innovation and R&D teams, researching cutting-edge technologies, rapidly adapting to new tools, and helping integrate them across the wider team. I place a strong focus on quality, testability, and maintaining the highest engineering standards.
               </p>
             </div>
 
@@ -70,25 +70,30 @@ export function IdentityModule() {
             <CollapsibleSection title="EXPERIENCE_LOG">
               <article className="border-l border-primary-container/30 pl-4">
                 <div className="mb-1 font-label-caps text-[10px] uppercase opacity-50 md:text-xs">
-                  August 2022 - Present
+                  September 2022 - Present
                 </div>
                 <h4 className="font-bold text-primary-container uppercase tracking-widest">Next Digital</h4>
                 <div className="mb-2 font-label-caps text-xs uppercase opacity-80">Senior Full Stack Developer</div>
+                <div className="mb-4 font-label-caps text-[10px] uppercase opacity-60 md:text-xs">
+                  Next Digital Hub, Madrid (Remote)
+                </div>
                 <div className="space-y-4 text-xs leading-relaxed opacity-90 md:text-sm">
                   <p>
-                    Working for Iberia Airlines in the Innovation Team as a Full Stack Developer, leading and contributing to rapid proof-of-concept projects across multiple domains. Most applications have been developed with Java / Kotlin and Angular / React, while also designing and implementing web services using Python and Node.js (NestJS), leveraging both RESTful and GraphQL APIs.
+                    Working within Iberia Airlines' Innovation Team, leading and contributing to greenfield proof-of-concept projects across AI, e-commerce and cloud solutions. Own the full delivery lifecycle, from requirements and technology selection to architecture, development, testing, deployment and monitoring, using Java, Kotlin, React and Angular, as well as Python and NestJS services with REST, GraphQL and Model Context Protocol (MCP) integrations.
                   </p>
                   <ul className="space-y-1 border-l border-primary-container/30 pl-4">
-                    <li>ChatGPT / Claude Apps (MCP Servers)</li>
+                    <li>ChatGPT / Claude Apps (MCP servers)</li>
                     <li>AI-powered chatbots</li>
                     <li>E-commerce solutions</li>
                     <li>Event-driven AWS-based applications</li>
                     <li>Serverless AWS architectures</li>
                     <li>Dashboard creation and application monitoring</li>
+                    <li>CMD applications with GO</li>
                     <li>Infrastructure creation with Terraform (IaC)</li>
+                    <li>Mentor and onboard new team members, promoting clean code, testing best practices and engineering quality standards.</li>
                   </ul>
                   <p>
-                    Focused on developing high-quality, thoroughly tested applications with clean and scalable architectures. Extensive experience across AWS cloud services, including Lambda, DynamoDB, S3, CloudFront, API Gateway, Secrets Manager, and CloudWatch, among others — covering infrastructure, storage, and security aspects. Skilled in working with PostgreSQL and other relational databases, and experienced in CI/CD automation to ensure efficient, reliable, and maintainable delivery pipelines.
+                    Focused on developing high-quality, thoroughly tested applications with clean and scalable architectures. Extensive experience across AWS cloud services — covering infrastructure, storage, and security aspects. Skilled in working with PostgreSQL and other relational databases, and experienced in CI/CD automation to ensure efficient, reliable, and maintainable delivery pipelines.
                   </p>
                 </div>
               </article>
