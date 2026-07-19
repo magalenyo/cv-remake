@@ -8,7 +8,7 @@ void main() {
 export const ANIMATION2_SCANLINE_FREQUENCY = 1000.0
 export const ANIMATION2_SCANLINE_AMPLITUDE = 0.01
 
-export const ANIMATION2_STATIC_FRAGMENT_SHADER = `precision highp float;
+export const ANIMATION2_STATIC_FRAGMENT_SHADER = `precision mediump float;
 uniform vec3 u_base_tint;
 varying vec2 v_texCoord;
 

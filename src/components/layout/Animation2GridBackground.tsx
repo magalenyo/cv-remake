@@ -45,6 +45,7 @@ export function Animation2GridBackground({ visible = true }: Animation2GridBackg
     const render = () => {
       if (!resizeObserver) syncCanvasSize(canvas)
 
+      gl.useProgram(program)
       gl.viewport(0, 0, canvas.width, canvas.height)
 
       const { base } = readThemeShaderColors()
